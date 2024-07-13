@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://bevlg4u82rerx"]
+
+[ext_resource type="BoxMesh" uid="uid://dh1kjp503hbji" path="res://Art/Prototype/mesh_prototype_purple.tres" id="1_e0euh"]
+[ext_resource type="Material" uid="uid://bm7qss1tarpaw" path="res://Art/Prototype/mat_prototype_black.tres" id="2_ph1ox"]
+[ext_resource type="BoxMesh" uid="uid://dlnxsbpc4v6ru" path="res://Art/Prototype/mesh_prototype_black.tres" id="3_1xdhn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sa0io"]
+material = ExtResource("2_ph1ox")
+
+[node name="root" type="Node3D"]
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="snail house" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 10.6536, 0.949746, 0)
+mesh = ExtResource("1_e0euh")
+skeleton = NodePath("")
+
+[node name="sign" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(0.5, 0, 0, 0, 10, 0, 0, 0, 0.5, -8.52783, 5.54144, 0)
+mesh = ExtResource("1_e0euh")
+skeleton = NodePath("")
+
+[node name="play" type="MeshInstance3D" parent="Level/sign"]
+transform = Transform3D(8.06312, 0.483466, 3.14284e-16, -0.0889273, 0.109591, -1.6524e-17, -3.37652e-15, 6.19095e-16, 0.924588, 0, 0.361795, 2.08165e-12)
+mesh = ExtResource("1_e0euh")
+skeleton = NodePath("")
+
+[node name="exit" type="MeshInstance3D" parent="Level/sign"]
+transform = Transform3D(8.25624, -0.0292623, 3.81385e-16, 0.0053824, 0.112216, -1.25038e-17, -3.37651e-15, 6.19095e-16, 0.924588, 0, 0.15148, 2.08165e-12)
+mesh = ExtResource("1_e0euh")
+skeleton = NodePath("")
+
+[node name="floor" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(25, 0, 0, 0, 1, 0, 0, 0, 25, 0, 0, 0)
+mesh = SubResource("BoxMesh_sa0io")
+skeleton = NodePath("")
+
+[node name="backdrop" type="MeshInstance3D" parent="Level"]
+transform = Transform3D(25, 0, -3.81149e-22, -3.81149e-22, -4.37114e-08, -25, 0, 1, -1.09278e-06, -0.0124016, 0.0209637, 12.5099)
+mesh = ExtResource("3_1xdhn")
+skeleton = NodePath("")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, -0.932696, 0.360664, 0, -0.360664, -0.932696, 0, 4.4395, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 3.45496e-15, -8.74228e-08, -3.22023e-08, 0.929687, 0.368352, 8.12758e-08, 0.368352, -0.929687, 2.08165e-12, 7.695, -13.268)
