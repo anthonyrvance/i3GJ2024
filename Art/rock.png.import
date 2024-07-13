@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmj631hnjepqk"
-path.s3tc="res://.godot/imported/texture_13.png-535a2bb93e475aab79e99a496a695bb1.s3tc.ctex"
+uid="uid://c235lpm2aw6h3"
+path="res://.godot/imported/rock.png-12131d710519b59a0f357f584ed5e2c0.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Prototype/texture_13.png"
-dest_files=["res://.godot/imported/texture_13.png-535a2bb93e475aab79e99a496a695bb1.s3tc.ctex"]
+source_file="res://Art/rock.png"
+dest_files=["res://.godot/imported/rock.png-12131d710519b59a0f357f584ed5e2c0.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

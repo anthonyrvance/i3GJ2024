@@ -1,6 +1,0 @@
-[gd_resource type="BoxMesh" load_steps=2 format=3 uid="uid://dh1kjp503hbji"]
-
-[ext_resource type="Material" uid="uid://b88mx5s217yyr" path="res://Art/Prototype/mat_prototype_purple.tres" id="1_73aqo"]
-
-[resource]
-material = ExtResource("1_73aqo")
