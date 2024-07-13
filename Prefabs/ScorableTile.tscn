@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckcnevvqf7sah"]
+
+[ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/snow.png" id="1_nikqe"]
+[ext_resource type="Script" path="res://Scripts/ScorableTile.gd" id="1_rs2wy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsk63"]
+size = Vector2(14, 14)
+
+[node name="ScorableTile" type="Area2D"]
+script = ExtResource("1_rs2wy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rsk63")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_nikqe")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

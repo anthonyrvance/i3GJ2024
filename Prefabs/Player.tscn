@@ -10,25 +10,19 @@ size = Vector2(16, 16)
 script = ExtResource("1_t02i3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
 texture = ExtResource("1_5ku73")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_y2t2m")
 
 [node name="RayCast2DDown" type="RayCast2D" parent="."]
-position = Vector2(8, 8)
 target_position = Vector2(0, 16)
 
 [node name="RayCast2DUp" type="RayCast2D" parent="."]
-position = Vector2(8, 8)
 target_position = Vector2(0, -16)
 
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
-position = Vector2(8, 8)
 target_position = Vector2(-16, 0)
 
 [node name="RayCast2DRight" type="RayCast2D" parent="."]
-position = Vector2(8, 8)
 target_position = Vector2(16, 0)

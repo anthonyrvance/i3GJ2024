@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const tileSize = 16
 
@@ -8,8 +9,12 @@ const tileSize = 16
 @onready var rayRight = $RayCast2DRight
 
 var moving = false
+var score = 1
 var inputDir
 var moveSpeed = 0.35
+
+func _ready():
+	GlobalSignals.connect("tileRolled", tile_rolled)
 
 func _physics_process(delta):
 	if moving == true:
@@ -43,3 +48,7 @@ func move():
 			
 func move_false():
 	moving = false
+
+func tile_rolled(inScore):
+	score += inScore
+	print("new score is " + str(score))
