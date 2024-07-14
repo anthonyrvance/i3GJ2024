@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://btkanmss3nsbk"]
 
-[ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/snowball.png" id="1_5ku73"]
+[ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="1_5ku73"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t02i3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2t2m"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://t78ls4qeu3ak"]
 
-[ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/snow.png" id="1_fpfro"]
+[ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="1_fpfro"]
 [ext_resource type="Script" path="res://Scripts/Gate.gd" id="1_odnrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx5q5"]

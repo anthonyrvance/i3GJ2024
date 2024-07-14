@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c154igygrp5ab"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_eq7nq"]
+[ext_resource type="Texture2D" uid="uid://du1sc86vs51j4" path="res://Art/Temporary/menu.png" id="1_lkpq8"]
+[ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="3_um8k0"]
+[ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="4_2l1pc"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_eq7nq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Menu" type="Sprite2D" parent="."]
+scale = Vector2(0.613779, 0.5)
+texture = ExtResource("1_lkpq8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(-213, 177)
+rotation = -0.15708
+scale = Vector2(13.709, 6.29414)
+texture = ExtResource("3_um8k0")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -7.85957
+offset_top = -7.69793
+offset_right = 0.140432
+offset_bottom = 0.302067
+scale = Vector2(1.95856, 2.00147)
+
+[node name="Exit" parent="." instance=ExtResource("4_2l1pc")]
+offset_left = 501.0
+offset_top = -288.0
+offset_right = 501.0
+offset_bottom = -288.0
+scale = Vector2(3.61921, 3.46648)
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]

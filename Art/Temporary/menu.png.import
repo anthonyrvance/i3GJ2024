@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpseav0mdwdhf"
-path="res://.godot/imported/snowball.png-f7ba137ca563f168914a6bd0d617b4b3.ctex"
+uid="uid://du1sc86vs51j4"
+path="res://.godot/imported/menu.png-7b4ec7651a55b758231589771de2bb74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/snowball.png"
-dest_files=["res://.godot/imported/snowball.png-f7ba137ca563f168914a6bd0d617b4b3.ctex"]
+source_file="res://Art/Temporary/menu.png"
+dest_files=["res://.godot/imported/menu.png-7b4ec7651a55b758231589771de2bb74.ctex"]
 
 [params]
 

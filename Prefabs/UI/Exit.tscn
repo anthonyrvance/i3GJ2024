@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgkeayh6h46g3"]
+
+[ext_resource type="Script" path="res://Scripts/Exit.gd" id="1_d5x21"]
+[ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="1_obqui"]
+
+[node name="Exit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d5x21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.117647, 1, 1)
+texture = ExtResource("1_obqui")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -8.0
+offset_top = -8.0
+scale = Vector2(2.01139, 2.02383)
+
+[connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
