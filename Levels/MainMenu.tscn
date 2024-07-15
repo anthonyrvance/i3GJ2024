@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c154igygrp5ab"]
+[gd_scene load_steps=6 format=3 uid="uid://c154igygrp5ab"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_eq7nq"]
 [ext_resource type="Texture2D" uid="uid://du1sc86vs51j4" path="res://Art/Temporary/menu.png" id="1_lkpq8"]
 [ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="3_um8k0"]
 [ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="4_2l1pc"]
+[ext_resource type="PackedScene" uid="uid://b11tulya8nmav" path="res://Prefabs/UI/VolumeSlider.tscn" id="5_11h5h"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_eq7nq")
@@ -35,5 +36,12 @@ offset_top = -288.0
 offset_right = 501.0
 offset_bottom = -288.0
 scale = Vector2(3.61921, 3.46648)
+
+[node name="VolumeSlider" parent="." instance=ExtResource("5_11h5h")]
+offset_left = -541.0
+offset_top = -314.0
+offset_right = -541.0
+offset_bottom = -314.0
+scale = Vector2(2.99718, 1.44171)
 
 [connection signal="pressed" from="Sprite2D/Button" to="." method="_on_button_pressed"]
