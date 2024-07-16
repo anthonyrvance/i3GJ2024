@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="i3GJ2024"
-run/main_scene="res://Levels/MainMenu.tscn"
+run/main_scene="res://Levels/Level 1.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 GlobalSignals="*res://Scripts/GlobalSignals.gd"
 BackgroundMusicPlayer="*res://Prefabs/BackgroundMusicPlayer.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
 
 [rendering]
 

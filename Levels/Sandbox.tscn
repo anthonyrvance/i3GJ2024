@@ -34,7 +34,7 @@ sources/1 = SubResource("TileSetAtlasSource_aynbx")
 script = SubResource("GDScript_3v5xg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(152, 162)
+position = Vector2(165, 194)
 zoom = Vector2(2, 2)
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -49,10 +49,11 @@ position = Vector2(56, 104)
 position = Vector2(104, 104)
 
 [node name="Gate" parent="." instance=ExtResource("5_qmc4e")]
+visible = false
 position = Vector2(136, 104)
 
 [node name="Exit" parent="." instance=ExtResource("6_q5ocs")]
-offset_left = 425.0
+offset_left = 309.0
 offset_top = 14.0
-offset_right = 425.0
+offset_right = 309.0
 offset_bottom = 14.0
