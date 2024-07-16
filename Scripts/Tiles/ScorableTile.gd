@@ -21,7 +21,6 @@ func _on_body_entered(body):
 	fillingSprite.visible = true
 	
 func _turn_passed():
-	print("please")
 	if refilling == true:
 		currTurnsToRefill -= 1
 		if currTurnsToRefill < 1:

@@ -1,25 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://btkanmss3nsbk"]
+[gd_scene load_steps=5 format=3 uid="uid://btkanmss3nsbk"]
 
 [ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="1_5ku73"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t02i3"]
+[ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="3_i7k74"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2t2m"]
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t02i3")
+ballSprites = [ExtResource("1_5ku73"), ExtResource("1_5ku73"), ExtResource("3_i7k74")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5ku73")
+
+[node name="RayCast2DUp" type="RayCast2D" parent="Sprite2D"]
+target_position = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y2t2m")
 
 [node name="RayCast2DDown" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
-
-[node name="RayCast2DUp" type="RayCast2D" parent="."]
-target_position = Vector2(0, -16)
 
 [node name="RayCast2DLeft" type="RayCast2D" parent="."]
 target_position = Vector2(-16, 0)
