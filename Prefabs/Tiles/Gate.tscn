@@ -1,13 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://t78ls4qeu3ak"]
 
+[ext_resource type="Script" path="res://Scripts/Tiles/Gate.gd" id="1_crhnt"]
 [ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="1_fpfro"]
-[ext_resource type="Script" path="res://Scripts/Gate.gd" id="1_odnrl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dx5q5"]
 size = Vector2(14, 14)
 
 [node name="Gate" type="Area2D"]
-script = ExtResource("1_odnrl")
+script = ExtResource("1_crhnt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

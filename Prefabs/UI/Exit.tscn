@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cgkeayh6h46g3"]
 
-[ext_resource type="Script" path="res://Scripts/Exit.gd" id="1_d5x21"]
+[ext_resource type="Script" path="res://Scripts/UI/Exit.gd" id="1_d5x21"]
 [ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="1_obqui"]
 
 [node name="Exit" type="Control"]

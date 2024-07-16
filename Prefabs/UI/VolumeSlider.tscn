@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b11tulya8nmav"]
 
-[ext_resource type="Script" path="res://Scripts/VolumeSlider.gd" id="1_jby16"]
+[ext_resource type="Script" path="res://Scripts/UI/VolumeSlider.gd" id="1_jby16"]
 
 [node name="VolumeSlider" type="Control"]
 layout_mode = 3

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c154igygrp5ab"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_eq7nq"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_eq7nq"]
 [ext_resource type="Texture2D" uid="uid://du1sc86vs51j4" path="res://Art/Temporary/menu.png" id="1_lkpq8"]
 [ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="3_um8k0"]
 [ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="4_2l1pc"]
