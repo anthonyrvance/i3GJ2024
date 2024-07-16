@@ -41,6 +41,7 @@ func _physics_process(delta):
 func move():
 	if inputDir:
 		if moving == false:
+			GlobalSignals.emit_signal("playerMoved")
 			moving = true
 			var tween = create_tween()
 			tween.tween_property(self, "position", position + inputDir * tileSize, moveSpeed)

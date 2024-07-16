@@ -47,10 +47,19 @@ layer_0/tile_data = PackedInt32Array(131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 1
 position = Vector2(56, 104)
 
 [node name="ScorableTile" parent="." instance=ExtResource("4_wyrnj")]
-position = Vector2(104, 104)
+position = Vector2(88, 104)
+refillable = true
+
+[node name="ScorableTile2" parent="." instance=ExtResource("4_wyrnj")]
+position = Vector2(120, 104)
+refillable = true
+
+[node name="ScorableTile3" parent="." instance=ExtResource("4_wyrnj")]
+position = Vector2(152, 104)
+refillable = true
 
 [node name="Gate" parent="." instance=ExtResource("5_qmc4e")]
-position = Vector2(136, 104)
+position = Vector2(216, 104)
 
 [node name="Exit" parent="." instance=ExtResource("6_q5ocs")]
 offset_left = 309.0
@@ -59,5 +68,5 @@ offset_right = 309.0
 offset_bottom = 14.0
 
 [node name="HoleTile" parent="." instance=ExtResource("7_mwdqu")]
-position = Vector2(168, 104)
+position = Vector2(184, 104)
 minScore = 9
