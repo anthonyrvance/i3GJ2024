@@ -5,6 +5,7 @@ extends Area2D
 @export var turnsToRefill = 3
 @onready var fillingSprite = $Sprite2D
 
+var usedOnce = false
 var refilling = false
 var currTurnsToRefill = 0
 
@@ -15,7 +16,15 @@ func _on_body_entered(body):
 	if refilling == true:
 		return
 		
+	if usedOnce == true and refillable == false:
+		return
+		
 	GlobalSignals.emit_signal("tileRolled", score)
+	usedOnce = true
+	
+	if refillable == false:
+		return
+	
 	refilling = true
 	currTurnsToRefill = turnsToRefill
 	fillingSprite.visible = true

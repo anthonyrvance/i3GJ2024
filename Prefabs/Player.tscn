@@ -1,21 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://btkanmss3nsbk"]
+[gd_scene load_steps=15 format=3 uid="uid://btkanmss3nsbk"]
 
-[ext_resource type="Texture2D" uid="uid://bpseav0mdwdhf" path="res://Art/Temporary/snowball.png" id="1_5ku73"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_t02i3"]
-[ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="3_i7k74"]
+[ext_resource type="Texture2D" uid="uid://bww50pyyd12lt" path="res://Art/Snowballs/sb_1.png" id="2_1i3n3"]
+[ext_resource type="Texture2D" uid="uid://cwtang4j7o3fd" path="res://Art/Snowballs/sb_2.png" id="3_b0y6o"]
+[ext_resource type="Texture2D" uid="uid://qrqmgap8hk0q" path="res://Art/Snowballs/sb_3.png" id="4_lh801"]
+[ext_resource type="Texture2D" uid="uid://cmk66t788y4ws" path="res://Art/Snowballs/sb_4.png" id="5_x47lr"]
+[ext_resource type="Texture2D" uid="uid://dvpvljbjxx3mx" path="res://Art/Snowballs/sb_5.png" id="6_gs4iy"]
+[ext_resource type="Texture2D" uid="uid://dk0mk4ie55foy" path="res://Art/Snowballs/sb_6.png" id="7_4ikwp"]
+[ext_resource type="Texture2D" uid="uid://d2l1lbqfk8paa" path="res://Art/Snowballs/sb_7.png" id="8_0hf2l"]
+[ext_resource type="Texture2D" uid="uid://cxeb7sxastg0n" path="res://Art/Snowballs/sb_8.png" id="9_gd3k6"]
+[ext_resource type="Texture2D" uid="uid://53tkrye3b0fi" path="res://Art/Snowballs/sb_9.png" id="10_jnc3o"]
+[ext_resource type="Texture2D" uid="uid://dw26vcj8gwmmj" path="res://Art/Snowballs/sb_10.png" id="11_rhyda"]
+[ext_resource type="Texture2D" uid="uid://cu0kxpfqvf3pd" path="res://Art/Snowballs/sb_11.png" id="12_nw1gk"]
+[ext_resource type="Texture2D" uid="uid://hljfo3hw44sc" path="res://Art/Snowballs/sb_12.png" id="13_hwlam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2t2m"]
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_t02i3")
-ballSprites = [ExtResource("1_5ku73"), ExtResource("1_5ku73"), ExtResource("3_i7k74")]
+minScore = 0
+maxScore = 33
+ballSprites = [ExtResource("2_1i3n3"), ExtResource("3_b0y6o"), ExtResource("4_lh801"), ExtResource("5_x47lr"), ExtResource("6_gs4iy"), ExtResource("7_4ikwp"), ExtResource("8_0hf2l"), ExtResource("9_gd3k6"), ExtResource("10_jnc3o"), ExtResource("11_rhyda"), ExtResource("12_nw1gk"), ExtResource("13_hwlam")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5ku73")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -4)
 
-[node name="RayCast2DUp" type="RayCast2D" parent="Sprite2D"]
-target_position = Vector2(0, -16)
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_1i3n3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_y2t2m")
@@ -28,3 +40,6 @@ target_position = Vector2(-16, 0)
 
 [node name="RayCast2DRight" type="RayCast2D" parent="."]
 target_position = Vector2(16, 0)
+
+[node name="RayCast2DUp" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)

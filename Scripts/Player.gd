@@ -14,10 +14,13 @@ const tileSize = 16
 @export var ballSprites = []
 
 var moving = false
-var score = 3
+var score = 0
 var inputDir
 var moveSpeed = 0.35
 var startingRotation = 0
+
+func get_size():
+	return floor(score / growThreshold)
 
 func _ready():
 	GlobalSignals.connect("tileRolled", tile_rolled)
@@ -53,6 +56,7 @@ func move():
 			
 			moving = true
 			var tween = create_tween()
+			tween.set_ease(Tween.EASE_IN_OUT)
 			tween.tween_property(self, "position", position + inputDir * tileSize, moveSpeed)
 			tween.tween_callback(move_end)
 			
@@ -61,15 +65,16 @@ func move_end():
 	
 	# check threshold
 	#print("modded = " + str(floor(score / growThreshold)))
-	$Sprite2D.texture = ballSprites[floor(score / growThreshold)]
+	$Node2D/Sprite2D.texture = ballSprites[get_size()]
 
 func tile_rolled(inScore):
 	score += inScore
 	score = clampi(score, minScore, maxScore) # NOTE if we plan to be able to go negative then come back here
-	#print("new score is " + str(score))
+	print("new score is " + str(score))
 
 # maybe make this its own property thats tracked like moving?	
 func roll_anim():
+	return # NOTE try again later I guess
 	var tween = create_tween()
 	startingRotation += 90
-	tween.tween_property($Sprite2D, "rotation", startingRotation, moveSpeed)
+	tween.tween_property($Node2D/Sprite2D, "rotation", startingRotation, moveSpeed)

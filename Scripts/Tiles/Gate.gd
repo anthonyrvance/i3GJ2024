@@ -1,13 +1,13 @@
 extends Area2D
 
-@export var reqScore = 3
+@export var reqSize = 3
 
 func _on_body_entered(body):
 	var player := body as Player
 	if not player:
 		return
 		
-	if player.score >= reqScore:
-		print("score: " + str(player.score) + " needs to be above " + str(reqScore) + " = SUCCESS")
+	if player.get_size() == reqSize:
+		print("players size: " + str(player.get_size()) + "  which needs to be: " + str(reqSize) + " = SUCCESS")
 	else:
-		print("score: " + str(player.score) + " needs to be above " + str(reqScore) + " = FAIL")
+		print("players size: " + str(player.get_size()) + " which needs to be: " + str(reqSize) + " = FAIL")
