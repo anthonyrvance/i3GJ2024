@@ -3,6 +3,8 @@ extends Area2D
 @export var score = 1
 @export var refillable = false
 @export var turnsToRefill = 3
+@export var exportFillingSprite = Texture2D
+
 @onready var fillingSprite = $Sprite2D
 
 var usedOnce = false
@@ -11,6 +13,7 @@ var currTurnsToRefill = 0
 
 func _ready():
 	GlobalSignals.connect("playerMoved", _turn_passed)
+	fillingSprite.texture = exportFillingSprite
 
 func _on_body_entered(body):
 	if refilling == true:
@@ -21,13 +24,13 @@ func _on_body_entered(body):
 		
 	GlobalSignals.emit_signal("tileRolled", score)
 	usedOnce = true
+	fillingSprite.visible = true
 	
 	if refillable == false:
 		return
 	
 	refilling = true
 	currTurnsToRefill = turnsToRefill
-	fillingSprite.visible = true
 	
 func _turn_passed():
 	if refilling == true:

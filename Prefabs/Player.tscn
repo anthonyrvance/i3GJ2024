@@ -18,6 +18,7 @@
 size = Vector2(16, 16)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_t02i3")
 minScore = 0
 maxScore = 33
