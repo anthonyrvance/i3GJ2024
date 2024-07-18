@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://bclapmlscaui2"]
+[gd_scene load_steps=21 format=3 uid="uid://bclapmlscaui2"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_jf6qi"]
 [ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="2_4qpvg"]
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_gtl72"]
 [ext_resource type="Texture2D" uid="uid://dfmuobn2l6wtd" path="res://Art/Tiles/decor.png" id="4_oqdrw"]
+[ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="5_55e6i"]
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="5_vswfs"]
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="6_uj42c"]
 [ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="7_wek0f"]
@@ -101,12 +102,44 @@ texture = ExtResource("4_oqdrw")
 3:3/0/physics_layer_0/angular_velocity = 0.0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vlnw"]
+texture = ExtResource("5_55e6i")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_3hh4y"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8km48")
 sources/1 = SubResource("TileSetAtlasSource_aynbx")
 sources/2 = SubResource("TileSetAtlasSource_mkefx")
 sources/3 = SubResource("TileSetAtlasSource_s53g4")
+sources/4 = SubResource("TileSetAtlasSource_5vlnw")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xljf"]
+atlas = ExtResource("5_55e6i")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqpns"]
+atlas = ExtResource("5_55e6i")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbg4o"]
+atlas = ExtResource("5_55e6i")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xegay"]
+atlas = ExtResource("5_55e6i")
+region = Rect2(0, 0, 16, 16)
 
 [node name="Root" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
@@ -119,13 +152,12 @@ layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3hh4y")
 format = 2
-layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0, -524301, 0, 0, -524300, 0, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -196593, 0, 0, 524303, 0, 0, 589808, 0, 0, 524272, 0, 0, 458736, 0, 0, 393200, 0, 0, 327664, 0, 0, 262128, 0, 0, 196592, 0, 0, 131056, 0, 0, 65520, 0, 0, -16, 0, 0, -65552, 0, 0, -131088, 0, 0, -196624, 0, 0, -262160, 0, 0, -327696, 0, 0, -393232, 0, 0, -458768, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 458767, 0, 0, 393231, 0, 0, 327695, 0, 0, 262159, 0, 0, 196623, 0, 0, 131087, 0, 0, 65551, 0, 0, 15, 0, 0, -65521, 0, 0, -131057, 0, 0, -262129, 0, 0, -327665, 0, 0, -393201, 0, 0, -327683, 65538, 1610612736, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -65539, 65538, 805306368, -65538, 2, 0, -65537, 2, 0, -131071, 2, 0, -131072, 2, 0, -393215, 2, 0, -393214, 65538, 0, -131070, 65538, 1342177280, -196606, 2, 1342177280, -327678, 2, 1342177280, -262142, 2, 1, -262141, 2, 0, -262140, 2, 0, -262139, 2, 0, -262138, 2, 0, -131075, 2, 1342177280, -262147, 2, 1342177280, -196611, 2, 805306369, -196612, 2, 0, -196613, 2, 0, -196614, 2, 0, -196615, 2, 0, -262146, 196611, 3, -262145, 196611, 3, -327680, 196611, 3, -327679, 196611, 3, -262143, 196611, 3, -262144, 196611, 3, -196610, 196611, 3, -131074, 196611, 3, -131073, 196611, 3, -196608, 196611, 3, -196607, 196611, 3, -196602, 196611, 3, -196603, 196611, 3, -196604, 196611, 3, -196605, 196611, 3, -131069, 196611, 3, -131068, 196611, 3, -131067, 196611, 3, -131066, 196611, 3, -65530, 196611, 3, -65531, 196611, 3, -65532, 196611, 3, -65533, 196611, 3, -65534, 196611, 3, -65535, 196611, 3, -65536, 196611, 3, -1, 196611, 3, -2, 196611, 3, -3, 196611, 3, -4, 196611, 3, -5, 196611, 3, -6, 196611, 3, -7, 196611, 3, -65543, 196611, 3, -131079, 196611, 3, -131078, 196611, 3, -131077, 196611, 3, -131076, 196611, 3, -65540, 196611, 3, -65541, 196611, 3, -65542, 196611, 3, -262151, 196611, 3, -262150, 196611, 3, -262149, 196611, 3, -262148, 196611, 3, -327684, 196611, 3, -393220, 196611, 3, -393221, 196611, 3, -393222, 196611, 3, -327686, 196611, 3, -327687, 196611, 3, -393223, 196611, 3, -327685, 196611, 3, -393219, 196611, 3, -393218, 196611, 3, -393217, 196611, 3, -458752, 196611, 3, -458751, 196611, 3, -458750, 196611, 3, -458749, 196611, 3, -393213, 196611, 3, -327677, 196611, 3, -393211, 196611, 3, -393210, 196611, 3, -458746, 196611, 3, -327674, 196611, 3, -196609, 196611, 3)
+layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0, -524301, 0, 0, -524300, 0, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -196593, 0, 0, 524303, 0, 0, 589808, 0, 0, 524272, 0, 0, 458736, 0, 0, 393200, 0, 0, 327664, 0, 0, 262128, 0, 0, 196592, 0, 0, 131056, 0, 0, 65520, 0, 0, -16, 0, 0, -65552, 0, 0, -131088, 0, 0, -196624, 0, 0, -262160, 0, 0, -327696, 0, 0, -393232, 0, 0, -458768, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 458767, 0, 0, 393231, 0, 0, 327695, 0, 0, 262159, 0, 0, 196623, 0, 0, 131087, 0, 0, 65551, 0, 0, 15, 0, 0, -65521, 0, 0, -131057, 0, 0, -262129, 0, 0, -327665, 0, 0, -393201, 0, 0, -65539, 2, 1342177280, -65538, 196611, 3, -65537, 196611, 3, -131071, 2, 1342177280, -131072, 196611, 3, -131070, 196611, 3, -196606, 2, 0, -327678, 196611, 3, -262142, 196611, 3, -262141, 196611, 3, -262140, 196611, 3, -262139, 196611, 3, -131075, 2, 1342177281, -262147, 196611, 3, -196611, 196611, 3, -196612, 196611, 3, -196613, 196611, 3, -196614, 65538, 0, -262146, 196611, 3, -262145, 196611, 3, -327680, 196611, 3, -327679, 196611, 3, -262143, 196611, 3, -262144, 196611, 3, -196610, 196611, 3, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 1342177281, -196603, 196611, 3, -196604, 65538, 0, -196605, 4, 0, -131069, 196611, 3, -131068, 4, 1342177280, -131067, 196611, 3, -65531, 196611, 3, -65532, 2, 1342177280, -65533, 196611, 3, -65534, 196611, 3, -65535, 2, 1342177280, -65536, 196611, 3, -1, 196611, 3, -2, 196611, 3, -3, 4, 1342177280, -4, 196611, 3, -5, 196611, 3, -6, 2, 1342177280, -131078, 2, 1, -131077, 2, 0, -131076, 2, 0, -65540, 196611, 3, -65541, 196611, 3, -65542, 2, 1342177280, -262150, 196611, 3, -262149, 196611, 3, -262148, 196611, 3, -327677, 196611, 3, -196609, 196611, 3, -327675, 196611, 3, -327676, 196611, 3, -262151, 196611, 3, -196615, 2, 0, -131079, 196611, 3, -65543, 196611, 3, -7, 196611, 3, -65530, 196611, 3, -131066, 196611, 3, -196602, 196611, 3, -262138, 196611, 3, -327674, 196611, 3, 65529, 196611, 3, 131065, 196611, 3, 131066, 196611, 3, 131067, 196611, 3, 131068, 196611, 3, 131069, 196611, 3, 131070, 196611, 3, 131071, 196611, 3, 65536, 196611, 3, 65537, 196611, 3, 65538, 196611, 3, 65539, 196611, 3, 65540, 196611, 3, 65541, 196611, 3, 5, 2, 0, 6, 2, 0, 65542, 196611, 3, 4, 2, 1610612737, 3, 2, 0, 2, 2, 0, 1, 2, 1610612737, 0, 2, 0, 65535, 2, 0, 65534, 4, 0, 65533, 2, 1610612737, 65532, 2, 0, 65531, 2, 0, 65530, 65538, 805306368)
 
 [node name="TileMap - Details" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource("TileSet_3hh4y")
 format = 2
-layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0, -524301, 0, 0, -524300, 0, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -196593, 0, 0, 524303, 0, 0, 589808, 0, 0, 524272, 0, 0, 458736, 0, 0, 393200, 0, 0, 327664, 0, 0, 262128, 0, 0, 196592, 0, 0, 131056, 0, 0, 65520, 0, 0, -16, 0, 0, -65552, 0, 0, -131088, 0, 0, -196624, 0, 0, -262160, 0, 0, -327696, 0, 0, -393232, 0, 0, -458768, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 458767, 0, 0, 393231, 0, 0, 327695, 0, 0, 262159, 0, 0, 196623, 0, 0, 131087, 0, 0, 65551, 0, 0, 15, 0, 0, -65521, 0, 0, -131057, 0, 0, -262129, 0, 0, -327665, 0, 0, -393201, 0, 0, -196608, 196611, 2)
+layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0, -524301, 0, 0, -524300, 0, 0, -524299, 0, 0, -524298, 0, 0, -524297, 0, 0, -524296, 0, 0, -524295, 0, 0, -524294, 0, 0, -524293, 0, 0, -524292, 0, 0, -524291, 0, 0, -524290, 0, 0, -524289, 0, 0, -589824, 0, 0, -589823, 0, 0, -589822, 0, 0, -589821, 0, 0, -589820, 0, 0, -589819, 0, 0, -589818, 0, 0, -589817, 0, 0, -589816, 0, 0, -589815, 0, 0, -589814, 0, 0, -589813, 0, 0, -589812, 0, 0, -589811, 0, 0, -589810, 0, 0, -589809, 0, 0, -524273, 0, 0, -458737, 0, 0, -196593, 0, 0, 524303, 0, 0, 589808, 0, 0, 524272, 0, 0, 458736, 0, 0, 393200, 0, 0, 327664, 0, 0, 262128, 0, 0, 196592, 0, 0, 131056, 0, 0, 65520, 0, 0, -16, 0, 0, -65552, 0, 0, -131088, 0, 0, -196624, 0, 0, -262160, 0, 0, -327696, 0, 0, -393232, 0, 0, -458768, 0, 0, 589809, 0, 0, 589810, 0, 0, 589811, 0, 0, 589812, 0, 0, 589813, 0, 0, 589814, 0, 0, 589815, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524290, 0, 0, 524291, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 524295, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 458767, 0, 0, 393231, 0, 0, 327695, 0, 0, 262159, 0, 0, 196623, 0, 0, 131087, 0, 0, 65551, 0, 0, 15, 0, 0, -65521, 0, 0, -131057, 0, 0, -262129, 0, 0, -327665, 0, 0, -393201, 0, 0, -2, 196611, 2, -131069, 196611, 2)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.25, 2.25)
@@ -134,8 +166,9 @@ zoom = Vector2(2.25, 2.25)
 position = Vector2(-104, -56)
 
 [node name="Gate" parent="." instance=ExtResource("6_uj42c")]
-position = Vector2(104, -56)
-reqSize = 5
+position = Vector2(104, 8)
+reqSize = 2
+levelPathToLoad = "res://Levels/Level 3.tscn"
 
 [node name="Exit" parent="." instance=ExtResource("7_wek0f")]
 offset_left = 401.0
@@ -144,80 +177,145 @@ offset_right = 401.0
 offset_bottom = 78.0
 
 [node name="ScorableTiles - Positive" type="Node2D" parent="."]
-visible = false
 
-[node name="ScorableTile" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+[node name="ScorableTile12" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
 position = Vector2(-88, -56)
+exportFillingSprite = SubResource("AtlasTexture_6xljf")
 
-[node name="ScorableTile2" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-72, -56)
+[node name="ScorableTile13" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-88, -40)
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
 
-[node name="ScorableTile18" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-24, -24)
-
-[node name="ScorableTile19" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-8, -24)
-
-[node name="ScorableTile20" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-40, -24)
-
-[node name="ScorableTile22" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+[node name="ScorableTile24" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
 position = Vector2(40, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile21" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(24, -24)
+[node name="ScorableTile25" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(72, -8)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
 
-[node name="ScorableTile3" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-56, -56)
+[node name="ScorableTile38" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-88, -24)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
+
+[node name="ScorableTile39" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-88, -8)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
+
+[node name="ScorableTile14" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-72, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
 [node name="ScorableTile15" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-40, -72)
+position = Vector2(-56, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
 [node name="ScorableTile16" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
 position = Vector2(-40, -40)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
 
 [node name="ScorableTile17" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(40, -72)
+position = Vector2(-24, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile13" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(24, -88)
+[node name="ScorableTile18" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-8, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile14" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(40, -88)
+[node name="ScorableTile19" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(8, -40)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile4" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-40, -56)
+[node name="ScorableTile20" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(24, -40)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
 
-[node name="ScorableTile5" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-40, -88)
+[node name="ScorableTile21" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(24, -8)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
 
-[node name="ScorableTile6" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-24, -88)
+[node name="ScorableTile22" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(24, -24)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
 
-[node name="ScorableTile7" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-8, -88)
+[node name="ScorableTile28" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-88, 8)
+rotation = 3.14159
+exportFillingSprite = SubResource("AtlasTexture_6xljf")
 
-[node name="ScorableTile8" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(8, -88)
+[node name="ScorableTile29" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-72, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile9" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(40, -56)
+[node name="ScorableTile30" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-56, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
-[node name="ScorableTile10" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(56, -56)
+[node name="ScorableTile31" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-40, 8)
+rotation = -1.5708
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
 
-[node name="ScorableTile11" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(72, -56)
+[node name="ScorableTile32" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-40, -24)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_xegay")
+
+[node name="ScorableTile33" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(-8, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
+
+[node name="ScorableTile34" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(8, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
+
+[node name="ScorableTile35" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(24, 8)
+rotation = -1.5708
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
+
+[node name="ScorableTile36" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(40, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
+
+[node name="ScorableTile37" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(56, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
 [node name="ScorableTile23" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(40, -24)
+position = Vector2(72, -40)
+exportFillingSprite = SubResource("AtlasTexture_6xljf")
 
-[node name="ScorableTile12" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(88, -56)
+[node name="ScorableTile26" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(72, 8)
+rotation = -1.5708
+exportFillingSprite = SubResource("AtlasTexture_sqpns")
+
+[node name="ScorableTile27" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
+position = Vector2(88, 8)
+exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
 [node name="ScorableTiles - Negative" type="Node2D" parent="."]
-visible = false
 
 [node name="ScorableTile11" parent="ScorableTiles - Negative" instance=ExtResource("8_sktyp")]
-position = Vector2(8, -24)
+position = Vector2(72, -24)
+score = -3
+
+[node name="ScorableTile13" parent="ScorableTiles - Negative" instance=ExtResource("8_sktyp")]
+position = Vector2(-40, -8)
+score = -3
+
+[node name="ScorableTile14" parent="ScorableTiles - Negative" instance=ExtResource("8_sktyp")]
+position = Vector2(-24, 8)
+score = -3
+
+[node name="ScorableTile12" parent="ScorableTiles - Negative" instance=ExtResource("8_sktyp")]
+position = Vector2(56, -40)
 score = -3
