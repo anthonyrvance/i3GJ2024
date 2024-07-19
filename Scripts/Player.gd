@@ -70,6 +70,7 @@ func move_end():
 func tile_rolled(inScore):
 	score += inScore
 	score = clampi(score, minScore, maxScore) # NOTE if we plan to be able to go negative then come back here
+	GlobalSignals.emit_signal("playersNewSize", get_size())
 	print("new score is " + str(score))
 
 # maybe make this its own property thats tracked like moving?	
