@@ -1,0 +1,443 @@
+[gd_scene load_steps=43 format=3 uid="uid://6vyn2y538dd8"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SnowballSizeUI.gd" id="1_fxxe5"]
+[ext_resource type="Texture2D" uid="uid://80pe0e4uymls" path="res://Art/UI/SnowballSlider/board.png" id="1_lmlb4"]
+[ext_resource type="Texture2D" uid="uid://o13mw526i40e" path="res://Art/UI/SnowballSlider/empty snowballs.png" id="2_liexq"]
+[ext_resource type="Texture2D" uid="uid://ckj0rqrbhcbp5" path="res://Art/UI/SnowballSlider/goal.png" id="3_ltq3h"]
+[ext_resource type="Texture2D" uid="uid://bt4dmcf3rxgc0" path="res://Art/UI/SnowballSlider/filled snowballs.png" id="4_8gpmg"]
+[ext_resource type="Texture2D" uid="uid://cj42bfdmle7ug" path="res://Art/UI/SnowballSlider/numbers.png" id="5_v1fer"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjpnp"]
+atlas = ExtResource("2_liexq")
+region = Rect2(16, 8, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ea0s"]
+atlas = ExtResource("2_liexq")
+region = Rect2(33, 8, 5, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbe5i"]
+atlas = ExtResource("2_liexq")
+region = Rect2(48, 8, 6, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb2f4"]
+atlas = ExtResource("2_liexq")
+region = Rect2(61, 8, 9, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1oacx"]
+atlas = ExtResource("2_liexq")
+region = Rect2(77, 6, 8, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlvts"]
+atlas = ExtResource("2_liexq")
+region = Rect2(91, 6, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g63ou"]
+atlas = ExtResource("2_liexq")
+region = Rect2(105, 4, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35jab"]
+atlas = ExtResource("2_liexq")
+region = Rect2(120, 4, 11, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgpmw"]
+atlas = ExtResource("2_liexq")
+region = Rect2(135, 2, 12, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyqjw"]
+atlas = ExtResource("2_liexq")
+region = Rect2(149, 2, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xkvs"]
+atlas = ExtResource("2_liexq")
+region = Rect2(163, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vu2do"]
+atlas = ExtResource("2_liexq")
+region = Rect2(178, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_177rb"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(17, 29, 6, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lktkc"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(0, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycjab"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(32, 29, 7, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gunv2"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(15, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0cyrj"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(47, 27, 8, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrdq2"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(30, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wt3ui"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(61, 27, 9, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3q3l"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(45, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge24p"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(76, 25, 10, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_03m1g"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(60, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puih3"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(91, 25, 11, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjpuq"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(75, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqj08"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(105, 23, 12, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y83sr"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(90, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_buoa1"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(119, 23, 13, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on4fe"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(105, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc1gv"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(134, 21, 14, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exoi4"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(120, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snryp"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(147, 21, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr85b"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(135, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h3je"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(162, 19, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cru4"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(150, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ds15s"]
+atlas = ExtResource("4_8gpmg")
+region = Rect2(177, 19, 17, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6gc5"]
+atlas = ExtResource("5_v1fer")
+region = Rect2(165, 0, 7, 13)
+margin = Rect2(0, 1, 0, 0)
+
+[node name="SnowballSizeUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fxxe5")
+
+[node name="Board" type="Sprite2D" parent="."]
+texture = ExtResource("1_lmlb4")
+
+[node name="Empty Snowballs and Goal" type="Node2D" parent="."]
+
+[node name="Group 1" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 1"]
+position = Vector2(-82, 3)
+texture = SubResource("AtlasTexture_sjpnp")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 1"]
+position = Vector2(-82, -4)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 2" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 2"]
+position = Vector2(-67, 3)
+texture = SubResource("AtlasTexture_7ea0s")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 2"]
+position = Vector2(-67, -5)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 3" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 3"]
+position = Vector2(-52, 3)
+texture = SubResource("AtlasTexture_mbe5i")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 3"]
+position = Vector2(-52, -6)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 4" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 4"]
+position = Vector2(-37, 3)
+texture = SubResource("AtlasTexture_tb2f4")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 4"]
+position = Vector2(-37, -7)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 5" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 5"]
+position = Vector2(-22, 2)
+texture = SubResource("AtlasTexture_1oacx")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 5"]
+position = Vector2(-22, -8)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 6" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 6"]
+position = Vector2(-7, 2)
+texture = SubResource("AtlasTexture_tlvts")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 6"]
+position = Vector2(-7, -9)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 7" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 7"]
+position = Vector2(8, 1)
+texture = SubResource("AtlasTexture_g63ou")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 7"]
+position = Vector2(8, -10)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 8" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 8"]
+position = Vector2(23, 1)
+texture = SubResource("AtlasTexture_35jab")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 8"]
+position = Vector2(23, -11)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 9" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 9"]
+position = Vector2(38, 0)
+texture = SubResource("AtlasTexture_xgpmw")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 9"]
+position = Vector2(38, -12)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 10" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 10"]
+position = Vector2(53, 0)
+texture = SubResource("AtlasTexture_cyqjw")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 10"]
+position = Vector2(53, -13)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 11" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 11"]
+position = Vector2(68, -1)
+texture = SubResource("AtlasTexture_5xkvs")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 11"]
+position = Vector2(68, -14)
+texture = ExtResource("3_ltq3h")
+
+[node name="Group 12" type="Node2D" parent="Empty Snowballs and Goal"]
+visible = false
+
+[node name="snowball empty" type="Sprite2D" parent="Empty Snowballs and Goal/Group 12"]
+position = Vector2(83, -1)
+texture = SubResource("AtlasTexture_vu2do")
+
+[node name="Goal" type="Sprite2D" parent="Empty Snowballs and Goal/Group 12"]
+position = Vector2(83, -15)
+texture = ExtResource("3_ltq3h")
+
+[node name="Snowballs and Number Arrows" type="Node2D" parent="."]
+
+[node name="Group 1" type="Node2D" parent="Snowballs and Number Arrows"]
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 1"]
+position = Vector2(-82, 4)
+texture = SubResource("AtlasTexture_177rb")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 1"]
+position = Vector2(-82, 15)
+texture = SubResource("AtlasTexture_lktkc")
+
+[node name="Group 2" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 2"]
+position = Vector2(-67, 4)
+texture = SubResource("AtlasTexture_ycjab")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 2"]
+position = Vector2(-67, 15)
+texture = SubResource("AtlasTexture_gunv2")
+
+[node name="Group 3" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 3"]
+position = Vector2(-52, 3)
+texture = SubResource("AtlasTexture_0cyrj")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 3"]
+position = Vector2(-52, 15)
+texture = SubResource("AtlasTexture_mrdq2")
+
+[node name="Group 4" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 4"]
+position = Vector2(-37, 3)
+texture = SubResource("AtlasTexture_wt3ui")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 4"]
+position = Vector2(-37, 15)
+texture = SubResource("AtlasTexture_t3q3l")
+
+[node name="Group 5" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 5"]
+position = Vector2(-22, 2)
+texture = SubResource("AtlasTexture_ge24p")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 5"]
+position = Vector2(-22, 15)
+texture = SubResource("AtlasTexture_03m1g")
+
+[node name="Group 6" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 6"]
+position = Vector2(-7, 2)
+texture = SubResource("AtlasTexture_puih3")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 6"]
+position = Vector2(-7, 15)
+texture = SubResource("AtlasTexture_pjpuq")
+
+[node name="Group 7" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 7"]
+position = Vector2(8, 1)
+texture = SubResource("AtlasTexture_qqj08")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 7"]
+position = Vector2(8, 15)
+texture = SubResource("AtlasTexture_y83sr")
+
+[node name="Group 8" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 8"]
+position = Vector2(23, 1)
+texture = SubResource("AtlasTexture_buoa1")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 8"]
+position = Vector2(23, 15)
+texture = SubResource("AtlasTexture_on4fe")
+
+[node name="Group 9" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 9"]
+position = Vector2(38, 0)
+texture = SubResource("AtlasTexture_kc1gv")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 9"]
+position = Vector2(38, 15)
+texture = SubResource("AtlasTexture_exoi4")
+
+[node name="Group 10" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 10"]
+position = Vector2(52, 0)
+texture = SubResource("AtlasTexture_snryp")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 10"]
+position = Vector2(53, 15)
+texture = SubResource("AtlasTexture_hr85b")
+
+[node name="Group 11" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 11"]
+position = Vector2(67, -1)
+texture = SubResource("AtlasTexture_5h3je")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 11"]
+position = Vector2(68, 15)
+texture = SubResource("AtlasTexture_2cru4")
+
+[node name="Group 12" type="Node2D" parent="Snowballs and Number Arrows"]
+visible = false
+
+[node name="snowball" type="Sprite2D" parent="Snowballs and Number Arrows/Group 12"]
+position = Vector2(83, -1)
+texture = SubResource("AtlasTexture_ds15s")
+
+[node name="number arrow" type="Sprite2D" parent="Snowballs and Number Arrows/Group 12"]
+position = Vector2(83, 15)
+texture = SubResource("AtlasTexture_i6gc5")

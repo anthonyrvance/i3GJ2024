@@ -196,7 +196,7 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("5_55e6i")
 region = Rect2(0, 0, 16, 16)
 
-[node name="Root" type="Node2D"]
+[node name="Root2" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
 
 [node name="TileMap - Border Temp" type="TileMap" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dagutmjlxs6ov"]
+[gd_scene load_steps=19 format=3 uid="uid://dagutmjlxs6ov"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_swxj1"]
 [ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="2_gb0g5"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="7_dkrhs"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="8_1vylh"]
 [ext_resource type="PackedScene" uid="uid://cles8vjjxwy6h" path="res://Prefabs/UI/FallingSnow.tscn" id="10_d1o7v"]
+[ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="11_brwkk"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -149,11 +150,6 @@ zoom = Vector2(2.25, 2.25)
 
 [node name="Player" parent="." instance=ExtResource("5_828mk")]
 position = Vector2(-104, -104)
-
-[node name="Gate" parent="." instance=ExtResource("6_hn8ik")]
-position = Vector2(24, -40)
-reqSize = 5
-levelPathToLoad = "res://Levels/Level 4.tscn"
 
 [node name="Exit" parent="." instance=ExtResource("7_dkrhs")]
 offset_left = 401.0
@@ -385,3 +381,11 @@ position = Vector2(88, -104)
 
 [node name="Falling Snow" parent="." instance=ExtResource("10_d1o7v")]
 position = Vector2(0, -128)
+
+[node name="SnowballSizeUI" parent="." instance=ExtResource("11_brwkk")]
+offset_top = 100.0
+offset_bottom = 100.0
+
+[node name="Gate" parent="." instance=ExtResource("6_hn8ik")]
+position = Vector2(24, -40)
+reqSize = 5

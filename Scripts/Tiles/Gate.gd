@@ -3,6 +3,9 @@ extends Area2D
 @export var reqSize = 3
 @export var levelPathToLoad = ""
 
+func _ready():
+	GlobalSignals.emit_signal("gateGoalSize", reqSize)
+
 func _on_body_entered(body):
 	var player := body as Player
 	if not player:

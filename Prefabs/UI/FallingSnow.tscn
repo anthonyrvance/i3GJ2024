@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cles8vjjxwy6h"]
 
-[ext_resource type="Texture2D" uid="uid://bvum36ee6qkrv" path="res://Art/Particles/snowflakes.png" id="1_l78bb"]
+[ext_resource type="Texture2D" uid="uid://bvum36ee6qkrv" path="res://Art/Particles/snowflakes.png" id="1_28nr4"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hmtvy"]
 particles_animation = true
@@ -34,6 +34,6 @@ anim_offset_max = 1.0
 material = SubResource("CanvasItemMaterial_hmtvy")
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_s6vtf")
-texture = ExtResource("1_l78bb")
+texture = ExtResource("1_28nr4")
 lifetime = 15.0
 preprocess = 5.0
