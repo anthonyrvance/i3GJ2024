@@ -389,3 +389,4 @@ offset_bottom = 100.0
 [node name="Gate" parent="." instance=ExtResource("6_hn8ik")]
 position = Vector2(24, -40)
 reqSize = 5
+levelPathToLoad = "res://Levels/Level 4.tscn"

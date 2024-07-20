@@ -20,7 +20,6 @@ size = Vector2(16, 16)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 script = ExtResource("1_t02i3")
-minScore = 0
 maxScore = 33
 ballSprites = [ExtResource("2_1i3n3"), ExtResource("3_b0y6o"), ExtResource("4_lh801"), ExtResource("5_x47lr"), ExtResource("6_gs4iy"), ExtResource("7_4ikwp"), ExtResource("8_0hf2l"), ExtResource("9_gd3k6"), ExtResource("10_jnc3o"), ExtResource("11_rhyda"), ExtResource("12_nw1gk"), ExtResource("13_hwlam")]
 

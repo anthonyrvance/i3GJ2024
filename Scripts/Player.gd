@@ -9,12 +9,12 @@ const tileSize = 16
 @onready var rayRight = $RayCast2DRight
 
 @export var growThreshold = 3 #theoretically this could be higher for wet snow or something
-@export var minScore = 3
+@export var minScore = 0
 @export var maxScore = 45
 @export var ballSprites = []
 
 var moving = false
-var score = 0
+var score = 3
 var inputDir
 var moveSpeed = 0.35
 var startingRotation = 0
@@ -65,7 +65,7 @@ func move_end():
 	
 	# check threshold
 	#print("modded = " + str(floor(score / growThreshold)))
-	$Node2D/Sprite2D.texture = ballSprites[get_size()]
+	$Node2D/Sprite2D.texture = ballSprites[get_size() - 1]
 
 func tile_rolled(inScore):
 	score += inScore
