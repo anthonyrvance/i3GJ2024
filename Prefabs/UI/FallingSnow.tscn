@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://cles8vjjxwy6h"]
+
+[ext_resource type="Texture2D" uid="uid://bvum36ee6qkrv" path="res://Art/Particles/snowflakes.png" id="1_l78bb"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hmtvy"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 2
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_6p33w"]
+offsets = PackedFloat32Array(0, 0.315574, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ve8ul"]
+gradient = SubResource("Gradient_6p33w")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_s6vtf"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 0, 1)
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 0, 0)
+damping_max = 5.0
+scale_min = 0.01
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_ve8ul")
+anim_offset_max = 1.0
+
+[node name="Falling Snow" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_hmtvy")
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_s6vtf")
+texture = ExtResource("1_l78bb")
+lifetime = 15.0
+preprocess = 5.0
