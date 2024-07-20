@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8edqnujkb6fm"]
+[gd_scene load_steps=28 format=3 uid="uid://b8edqnujkb6fm"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_8xge3"]
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_i17ty"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="6_lh8h5"]
 [ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="7_grwif"]
 [ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="9_5dlnv"]
+[ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="11_pej1e"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -225,11 +226,6 @@ layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 0, 0, -524302, 0, 0
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.25, 2.25)
 
-[node name="Gate" parent="." instance=ExtResource("6_lh8h5")]
-position = Vector2(104, -56)
-reqSize = 5
-levelPathToLoad = "res://Levels/Level 2.tscn"
-
 [node name="Exit" parent="." instance=ExtResource("7_grwif")]
 offset_left = 401.0
 offset_top = 78.0
@@ -346,3 +342,12 @@ score = -3
 
 [node name="Player" parent="." instance=ExtResource("4_67xd3")]
 position = Vector2(-104, -56)
+
+[node name="SnowballSizeUI" parent="." instance=ExtResource("11_pej1e")]
+offset_top = 100.0
+offset_bottom = 100.0
+
+[node name="Gate" parent="." instance=ExtResource("6_lh8h5")]
+position = Vector2(104, -56)
+reqSize = 5
+levelPathToLoad = "res://Levels/Level 2.tscn"
