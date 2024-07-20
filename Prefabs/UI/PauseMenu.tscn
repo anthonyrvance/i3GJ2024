@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqmuf1r1nsn3g"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.gd" id="1_10rxp"]
+[ext_resource type="Texture2D" uid="uid://bw0sp0aoxi0yw" path="res://Art/UI/Menu/PauseBackground.png" id="1_pn0k5"]
+[ext_resource type="Texture2D" uid="uid://bsb853tasxvsi" path="res://Art/UI/Menu/RESUME.png" id="2_shfhx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5owp"]
+texture = ExtResource("2_shfhx")
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10rxp")
+
+[node name="PauseBackground" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("1_pn0k5")
+
+[node name="Button" type="Button" parent="PauseBackground"]
+offset_left = -32.0
+offset_top = 30.3333
+offset_right = 32.0
+offset_bottom = 56.3333
+theme_override_styles/normal = SubResource("StyleBoxTexture_y5owp")
+
+[connection signal="pressed" from="PauseBackground/Button" to="." method="_on_button_pressed"]

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalSignals="*res://Scripts/Global/GlobalSignals.gd"
 BackgroundMusicPlayer="*res://Prefabs/BackgroundMusicPlayer.tscn"
+GameManager="*res://Scripts/Global/GameManager.gd"
 
 [display]
 

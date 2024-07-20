@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dagutmjlxs6ov"]
+[gd_scene load_steps=18 format=3 uid="uid://dagutmjlxs6ov"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_swxj1"]
 [ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="2_gb0g5"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="5_828mk"]
 [ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="5_yyukr"]
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="6_hn8ik"]
-[ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="7_dkrhs"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="8_1vylh"]
 [ext_resource type="PackedScene" uid="uid://cles8vjjxwy6h" path="res://Prefabs/UI/FallingSnow.tscn" id="10_d1o7v"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="11_brwkk"]
@@ -151,12 +150,6 @@ zoom = Vector2(2.25, 2.25)
 [node name="Player" parent="." instance=ExtResource("5_828mk")]
 position = Vector2(-104, -104)
 
-[node name="Exit" parent="." instance=ExtResource("7_dkrhs")]
-offset_left = 401.0
-offset_top = 78.0
-offset_right = 401.0
-offset_bottom = 78.0
-
 [node name="ScorableTiles - Positive" type="Node2D" parent="."]
 
 [node name="ScorableTile27" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
@@ -190,23 +183,11 @@ score = -3
 [node name="ScorableTile70" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(-24, -88)
 
-[node name="ScorableTile40" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(-8, -152)
-
 [node name="ScorableTile68" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(-56, -72)
 
 [node name="ScorableTile69" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(-40, -72)
-
-[node name="ScorableTile41" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(8, -152)
-
-[node name="ScorableTile42" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(24, -152)
-
-[node name="ScorableTile43" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(40, -152)
 
 [node name="ScorableTile55" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(8, -8)
