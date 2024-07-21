@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://o4o60inlurg2"]
+[gd_scene load_steps=35 format=3 uid="uid://ca6us64d37mjl"]
 
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="1_umv77"]
 [ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="2_61j7k"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfr3wx77nglpe" path="res://Art/Tiles/holes.png" id="7_efwb7"]
 [ext_resource type="Texture2D" uid="uid://btgj5cnh4rvex" path="res://Art/Tiles/forest.png" id="8_kokji"]
 [ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="9_nnhki"]
-[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="10_jvky7"]
+[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="10_jvky7"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="11_r4nt7"]
 [ext_resource type="PackedScene" uid="uid://tjkjcec6nw2o" path="res://Prefabs/Tiles/HoleTile.tscn" id="12_th6od"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="13_ogfcj"]
@@ -399,3 +399,4 @@ offset_bottom = 148.0
 [node name="Gate" parent="." instance=ExtResource("14_y2nd0")]
 position = Vector2(-40, -24)
 reqSize = 12
+levelPathToLoad = "res://Levels/MainMenu.tscn"
