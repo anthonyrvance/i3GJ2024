@@ -16,3 +16,4 @@ func _on_body_entered(body):
 		get_tree().change_scene_to_file(levelPathToLoad)
 	else:
 		print("players size: " + str(player.get_size()) + " which needs to be: " + str(reqSize) + " = FAIL")
+		get_tree().reload_current_scene()
