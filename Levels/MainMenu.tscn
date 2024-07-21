@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c154igygrp5ab"]
+[gd_scene load_steps=6 format=3 uid="uid://c154igygrp5ab"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_eq7nq"]
 [ext_resource type="Texture2D" uid="uid://cd4jhiu7riw1p" path="res://Art/UI/Menu/start_screen-background.png" id="2_vuujb"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
+[ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="4_6m4e6"]
+[ext_resource type="PackedScene" uid="uid://r2wbmt3v5nvl" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
 [ext_resource type="PackedScene" uid="uid://b11tulya8nmav" path="res://Prefabs/UI/VolumeSlider.tscn" id="5_11h5h"]
 
 [node name="Menu" type="Node2D"]
@@ -27,30 +28,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -75.0
-offset_top = 67.5
-offset_right = 75.0
-offset_bottom = 190.5
+offset_left = -59.0
+offset_top = 61.0
+offset_right = 91.0
+offset_bottom = 235.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.768914, 1)
 theme_override_constants/separation = 15
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
+[node name="StartButton" parent="VBoxContainer" instance=ExtResource("4_6m4e6")]
 layout_mode = 2
-text = "Start"
+theme_override_font_sizes/font_size = 24
+text = "START"
 
-[node name="SettingsButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
+[node name="SettingsButton" parent="VBoxContainer" instance=ExtResource("4_6m4e6")]
 layout_mode = 2
-text = "Settings
-"
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS"
 
-[node name="QuitButton" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(150, 0)
+[node name="QuitButton" parent="VBoxContainer" instance=ExtResource("4_6m4e6")]
 layout_mode = 2
-text = "Quit
-"
+theme_override_font_sizes/font_size = 24
+text = "QUIT"
 
 [node name="Falling Snow" parent="." instance=ExtResource("4_dy8iw")]
 position = Vector2(0, -324)

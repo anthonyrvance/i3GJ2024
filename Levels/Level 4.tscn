@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dvt3u3li4bi77" path="res://Art/Tiles/signs.png" id="6_75mdg"]
 [ext_resource type="Texture2D" uid="uid://cfr3wx77nglpe" path="res://Art/Tiles/holes.png" id="7_p7bnf"]
 [ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="7_u0nmm"]
-[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="10_ro3yu"]
+[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="10_ro3yu"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="12_26tob"]
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="13_842ia"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="14_pq63n"]

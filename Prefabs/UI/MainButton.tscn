@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5isiaiop758n"]
+
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="1_14qvu"]
+[ext_resource type="Texture2D" uid="uid://bqjwgfew3tj3a" path="res://Art/UI/Menu/Button/reg-button.png" id="2_2spa5"]
+[ext_resource type="Texture2D" uid="uid://bj1ahf6fm0an3" path="res://Art/UI/Menu/Button/reg-button-hover.png" id="3_gr7fp"]
+[ext_resource type="Texture2D" uid="uid://cljoo7og50jh0" path="res://Art/UI/Menu/Button/reg-button-active.png" id="4_bul01"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hidiy"]
+texture = ExtResource("2_2spa5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4ills"]
+texture = ExtResource("3_gr7fp")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8u1ll"]
+texture = ExtResource("4_bul01")
+
+[node name="MainButton" type="Button"]
+custom_minimum_size = Vector2(118, 48)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_14qvu")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxTexture_hidiy")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4ills")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8u1ll")
+text = "Button
+"

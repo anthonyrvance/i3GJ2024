@@ -1,19 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqmuf1r1nsn3g"]
+[gd_scene load_steps=5 format=3 uid="uid://dqmuf1r1nsn3g"]
 
 [ext_resource type="Script" path="res://Scripts/UI/PauseMenu.gd" id="1_10rxp"]
 [ext_resource type="Texture2D" uid="uid://bw0sp0aoxi0yw" path="res://Art/UI/Menu/PauseBackground.png" id="1_pn0k5"]
-[ext_resource type="Texture2D" uid="uid://bsb853tasxvsi" path="res://Art/UI/Menu/RESUME.png" id="2_shfhx"]
-[ext_resource type="Texture2D" uid="uid://cqmqxh6pgwso0" path="res://Art/UI/Menu/quit-button.png" id="4_ile03"]
-[ext_resource type="Texture2D" uid="uid://c22v48ow06dqc" path="res://Art/UI/Menu/quit-bg.png" id="5_twlnp"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5owp"]
-texture = ExtResource("2_shfhx")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4hpim"]
-texture = ExtResource("4_ile03")
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_drayl"]
-texture = ExtResource("4_ile03")
+[ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="3_h5042"]
+[ext_resource type="Texture2D" uid="uid://dye05uvh7cqgy" path="res://Art/UI/Menu/quit-bg-new.png" id="4_mf1x0"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -27,53 +17,52 @@ script = ExtResource("1_10rxp")
 [node name="Pause" type="Node2D" parent="."]
 
 [node name="PauseBackground" type="Sprite2D" parent="Pause"]
-scale = Vector2(0.9, 0.9)
 texture = ExtResource("1_pn0k5")
 
-[node name="ClosePauseMenuButton" type="Button" parent="Pause"]
-offset_left = -31.8
-offset_top = 27.3
-offset_right = 32.2
-offset_bottom = 53.3
-theme_override_styles/normal = SubResource("StyleBoxTexture_y5owp")
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause/PauseBackground"]
+offset_left = -27.0
+offset_top = 31.0
+offset_right = 91.0
+offset_bottom = 195.0
+scale = Vector2(0.446923, 0.446923)
+theme_override_constants/separation = 10
 
-[node name="SettingsButton" type="Button" parent="Pause"]
-offset_left = -31.8
-offset_top = 58.3
-offset_right = 32.2
-offset_bottom = 84.3
-theme_override_styles/normal = SubResource("StyleBoxTexture_y5owp")
+[node name="ResumePlayButton" parent="Pause/PauseBackground/VBoxContainer" instance=ExtResource("3_h5042")]
+layout_mode = 2
+text = "RESUME"
 
-[node name="OpenQuitMenuButton" type="Button" parent="Pause"]
-offset_left = -31.8
-offset_top = 89.3
-offset_right = 32.2
-offset_bottom = 115.3
-theme_override_styles/normal = SubResource("StyleBoxTexture_4hpim")
+[node name="OpenSettingsButton" parent="Pause/PauseBackground/VBoxContainer" instance=ExtResource("3_h5042")]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="OpenExitMenuButton" parent="Pause/PauseBackground/VBoxContainer" instance=ExtResource("3_h5042")]
+layout_mode = 2
+text = "QUIT"
 
 [node name="Exit" type="Node2D" parent="."]
 visible = false
 
 [node name="ExitBackground" type="Sprite2D" parent="Exit"]
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("5_twlnp")
+texture = ExtResource("4_mf1x0")
 
-[node name="CloseEscapeMenuButton" type="Button" parent="Exit"]
-offset_left = 5.2
-offset_top = 27.3
-offset_right = 69.2
-offset_bottom = 53.3
-theme_override_styles/normal = SubResource("StyleBoxTexture_y5owp")
+[node name="HBoxContainer" type="HBoxContainer" parent="Exit/ExitBackground"]
+offset_left = -64.0
+offset_top = 31.0
+offset_right = 222.0
+offset_bottom = 79.0
+scale = Vector2(0.446945, 0.446945)
+theme_override_constants/separation = 50
 
-[node name="QuitConfirmButton" type="Button" parent="Exit"]
-offset_left = -68.8
-offset_top = 27.3
-offset_right = -4.80001
-offset_bottom = 53.3
-theme_override_styles/normal = SubResource("StyleBoxTexture_drayl")
+[node name="QuitLevelButton" parent="Exit/ExitBackground/HBoxContainer" instance=ExtResource("3_h5042")]
+layout_mode = 2
+text = "QUIT"
 
-[connection signal="pressed" from="Pause/ClosePauseMenuButton" to="." method="_on_close_pause_menu_button_pressed"]
-[connection signal="pressed" from="Pause/SettingsButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Pause/OpenQuitMenuButton" to="." method="_on_open_quit_menu_button_pressed"]
-[connection signal="pressed" from="Exit/CloseEscapeMenuButton" to="." method="_on_close_escape_menu_button_pressed"]
-[connection signal="pressed" from="Exit/QuitConfirmButton" to="." method="_on_quit_confirm_button_pressed"]
+[node name="ReturnButton" parent="Exit/ExitBackground/HBoxContainer" instance=ExtResource("3_h5042")]
+layout_mode = 2
+text = "RETURN"
+
+[connection signal="pressed" from="Pause/PauseBackground/VBoxContainer/ResumePlayButton" to="." method="_on_resume_play_button_pressed"]
+[connection signal="pressed" from="Pause/PauseBackground/VBoxContainer/OpenSettingsButton" to="." method="_on_open_settings_button_pressed"]
+[connection signal="pressed" from="Pause/PauseBackground/VBoxContainer/OpenExitMenuButton" to="." method="_on_open_exit_menu_button_pressed"]
+[connection signal="pressed" from="Exit/ExitBackground/HBoxContainer/QuitLevelButton" to="." method="_on_quit_level_button_pressed"]
+[connection signal="pressed" from="Exit/ExitBackground/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
