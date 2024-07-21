@@ -7,6 +7,9 @@ const tileSize = 16
 @onready var rayDown = $RayCast2DDown
 @onready var rayLeft = $RayCast2DLeft
 @onready var rayRight = $RayCast2DRight
+@onready var snowSound1 = preload("res://Sound/snow-step-1-81064.mp3")
+@onready var snowSound2 = preload("res://Sound/snow-step-2-102324.mp3")
+@onready var snowSound3 = preload("res://Sound/snow-step-3-81065.mp3")
 
 @export var growThreshold = 3 #theoretically this could be higher for wet snow or something
 @export var minScore = 0
@@ -54,6 +57,9 @@ func move():
 			
 			roll_anim()
 			
+			# sound effect at the beginning
+			_play_rand_step_fx()
+			
 			moving = true
 			var tween = create_tween()
 			tween.set_ease(Tween.EASE_IN_OUT)
@@ -67,6 +73,9 @@ func move_end():
 	#print("modded = " + str(floor(score / growThreshold)))
 	$Node2D/Sprite2D.texture = ballSprites[get_size() - 1]
 
+	# sound effect at the end
+	#_play_rand_step_fx()
+
 func tile_rolled(inScore):
 	score += inScore
 	score = clampi(score, minScore, maxScore) # NOTE if we plan to be able to go negative then come back here
@@ -79,3 +88,12 @@ func roll_anim():
 	var tween = create_tween()
 	startingRotation += 90
 	tween.tween_property($Node2D/Sprite2D, "rotation", startingRotation, moveSpeed)
+
+func _play_rand_step_fx():
+	var r = randi_range(1,3)
+	if r == 1:
+		BackgroundMusicPlayer.play_fx(snowSound1)
+	elif r == 2:
+		BackgroundMusicPlayer.play_fx(snowSound2)
+	elif r == 3:
+		BackgroundMusicPlayer.play_fx(snowSound3)

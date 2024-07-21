@@ -18,6 +18,8 @@ func play_fx(stream: AudioStream, volume = 0.0):
 	fx_player.stream = stream
 	fx_player.name = "FX_PLAYER"
 	fx_player.volume_db = volume
+	fx_player.pitch_scale = randf_range(.8, 1.0)
+	
 	add_child(fx_player)
 	fx_player.play()
 	
