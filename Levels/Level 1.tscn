@@ -1,6 +1,7 @@
-[gd_scene load_steps=43 format=3 uid="uid://b8edqnujkb6fm"]
+[gd_scene load_steps=46 format=3 uid="uid://b8edqnujkb6fm"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_8xge3"]
+[ext_resource type="Texture2D" uid="uid://bupd6iuhnd8xu" path="res://Art/UI/Background/PATTERN-big_tone.png" id="1_djo07"]
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="2_tngrp"]
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_i17ty"]
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="4_67xd3"]
@@ -22,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="21_851u5"]
 [ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="22_38yw4"]
 [ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="23_xfmse"]
+[ext_resource type="Texture2D" uid="uid://xyld2k5bbmpn" path="res://Art/UI/Dialogue/Dialogue-Box-BIG-TONE.png" id="24_ueiyy"]
+[ext_resource type="Script" path="res://Scripts/UI/Dialogue.gd" id="25_vs6cj"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -266,8 +269,11 @@ texture = ExtResource("18_mj84e")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro800"]
 texture = ExtResource("19_errwt")
 
-[node name="Root" type="Node2D"]
+[node name="Level 1" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_djo07")
 
 [node name="Border" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3hh4y")
@@ -404,7 +410,7 @@ offset_bottom = 94.0
 
 [node name="Gate" parent="." instance=ExtResource("6_lh8h5")]
 position = Vector2(104, -56)
-reqSize = 5
+reqSize = 6
 levelPathToLoad = "res://Levels/Level 2.tscn"
 
 [node name="UIControls" type="Node2D" parent="."]
@@ -478,7 +484,31 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_ro800")
 icon = ExtResource("23_xfmse")
 icon_alignment = 1
 
+[node name="Dialogue" type="Sprite2D" parent="."]
+position = Vector2(0, -109)
+texture = ExtResource("24_ueiyy")
+script = ExtResource("25_vs6cj")
+
+[node name="Label" type="Label" parent="Dialogue"]
+offset_left = -95.0
+offset_top = -32.0
+offset_right = 104.655
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_8oel5")
+theme_override_font_sizes/font_size = 8
+text = "Watch out for fires, dawg! Fires shrink the snowball. Maybe that'll help..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="Dialogue"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/PauseButton" to="UIControls" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/SettingsButton" to="UIControls" method="_on_settings_button_pressed"]
+[connection signal="timeout" from="Dialogue/Timer" to="Dialogue" method="_on_timer_timeout"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=35 format=3 uid="uid://nb4so2x15ig6"]
+[gd_scene load_steps=52 format=3 uid="uid://nb4so2x15ig6"]
 
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="1_6dx5g"]
+[ext_resource type="Texture2D" uid="uid://cig68x8qo2ma5" path="res://Art/UI/Background/PATTERN-nick.png" id="1_vvopq"]
 [ext_resource type="Texture2D" uid="uid://dfmuobn2l6wtd" path="res://Art/Tiles/decor.png" id="3_ae6o5"]
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="4_sfk1b"]
 [ext_resource type="Texture2D" uid="uid://btgj5cnh4rvex" path="res://Art/Tiles/forest.png" id="4_yw1jk"]
@@ -10,11 +11,24 @@
 [ext_resource type="Texture2D" uid="uid://cfr3wx77nglpe" path="res://Art/Tiles/holes.png" id="7_p7bnf"]
 [ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="7_u0nmm"]
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="9_llk1t"]
-[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="10_ro3yu"]
+[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="10_ro3yu"]
+[ext_resource type="Script" path="res://Scripts/UI/UIControls.gd" id="11_f56xu"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="12_26tob"]
+[ext_resource type="Texture2D" uid="uid://mwvmfhsya0t6" path="res://Art/UI/Menu/leveldisplay.png" id="12_v5614"]
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="13_842ia"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.gd" id="13_ni73r"]
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="14_fhxj0"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="14_pq63n"]
 [ext_resource type="PackedScene" uid="uid://tjkjcec6nw2o" path="res://Prefabs/Tiles/HoleTile.tscn" id="15_hdsr4"]
+[ext_resource type="Texture2D" uid="uid://bpp7bih08pp6l" path="res://Art/UI/Menu/smallButton/square-button.png" id="15_kalxg"]
+[ext_resource type="Texture2D" uid="uid://cfkrripy500v" path="res://Art/UI/Menu/smallButton/square-button-hover.png" id="16_un4xu"]
+[ext_resource type="Texture2D" uid="uid://dtpnmjlm1jcxc" path="res://Art/UI/Menu/smallButton/square-button-active.png" id="17_astp7"]
+[ext_resource type="Texture2D" uid="uid://bpbnet1dkfolj" path="res://Art/UI/Menu/restart.png" id="18_sfqlk"]
+[ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="19_dbse5"]
+[ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="20_p4sef"]
+[ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="21_svbhh"]
+[ext_resource type="Texture2D" uid="uid://bimpp2esyhyd8" path="res://Art/UI/Dialogue/Dialogue-Box-NICK.png" id="27_rpdvr"]
+[ext_resource type="Script" path="res://Scripts/UI/Dialogue.gd" id="28_pauuv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbsio"]
 texture = ExtResource("5_8hoa2")
@@ -335,6 +349,15 @@ texture = ExtResource("9_llk1t")
 [sub_resource type="TileSet" id="TileSet_236c7"]
 sources/0 = SubResource("TileSetAtlasSource_rg0vi")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6akvr"]
+texture = ExtResource("15_kalxg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p6iml"]
+texture = ExtResource("16_un4xu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yb6lm"]
+texture = ExtResource("17_astp7")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_kjsew"]
 atlas = ExtResource("5_8hoa2")
 region = Rect2(0, 0, 16, 16)
@@ -361,6 +384,10 @@ region = Rect2(16, 0, 16, 16)
 
 [node name="Level 4" type="Node2D"]
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 48)
+texture = ExtResource("1_vvopq")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 48)
 zoom = Vector2(2.25, 2.25)
@@ -382,6 +409,78 @@ layer_0/tile_data = PackedInt32Array(-327695, 65536, 0, -327694, 65536, 0, -3276
 
 [node name="Fire" parent="." instance=ExtResource("10_ro3yu")]
 position = Vector2(33, 32)
+
+[node name="UIControls" type="Node2D" parent="."]
+position = Vector2(0, 49)
+script = ExtResource("11_f56xu")
+
+[node name="Top Left Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="LevelDisplay" type="Sprite2D" parent="UIControls/Top Left Stuff"]
+position = Vector2(-3, -3)
+texture = ExtResource("12_v5614")
+script = ExtResource("13_ni73r")
+
+[node name="Label" type="Label" parent="UIControls/Top Left Stuff/LevelDisplay"]
+offset_left = -19.0
+offset_top = -9.0
+offset_right = 21.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("14_fhxj0")
+theme_override_font_sizes/font_size = 8
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="UIControls/Top Left Stuff"]
+offset_left = 28.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6akvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p6iml")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb6lm")
+icon = ExtResource("18_sfqlk")
+icon_alignment = 1
+
+[node name="Top Right Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="ExitButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 430.0
+offset_top = -16.0
+offset_right = 454.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6akvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p6iml")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb6lm")
+icon = ExtResource("19_dbse5")
+icon_alignment = 1
+
+[node name="PauseButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 402.0
+offset_top = -16.0
+offset_right = 426.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6akvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p6iml")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb6lm")
+icon = ExtResource("20_p4sef")
+icon_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 374.0
+offset_top = -16.0
+offset_right = 398.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_6akvr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_p6iml")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_yb6lm")
+icon = ExtResource("21_svbhh")
+icon_alignment = 1
 
 [node name="Scorable Tiles" type="Node2D" parent="."]
 
@@ -458,3 +557,32 @@ offset_bottom = 142.0
 position = Vector2(56, -8)
 reqSize = 4
 levelPathToLoad = "res://Levels/Level 5.tscn"
+
+[node name="Dialogue" type="Sprite2D" parent="."]
+position = Vector2(0, -60)
+texture = ExtResource("27_rpdvr")
+script = ExtResource("28_pauuv")
+
+[node name="Label" type="Label" parent="Dialogue"]
+offset_left = -95.0
+offset_top = -32.0
+offset_right = 104.655
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_fhxj0")
+theme_override_font_sizes/font_size = 8
+text = "Uh-oh! There are holes on this level! Good thing there are signs :) #swag"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Timer" type="Timer" parent="Dialogue"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/PauseButton" to="UIControls" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/SettingsButton" to="UIControls" method="_on_settings_button_pressed"]
+[connection signal="timeout" from="Dialogue/Timer" to="Dialogue" method="_on_timer_timeout"]

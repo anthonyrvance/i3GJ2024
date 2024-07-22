@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://bclapmlscaui2"]
+[gd_scene load_steps=43 format=3 uid="uid://bclapmlscaui2"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_jf6qi"]
+[ext_resource type="Texture2D" uid="uid://bupd6iuhnd8xu" path="res://Art/UI/Background/PATTERN-big_tone.png" id="1_u5pec"]
 [ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="2_4qpvg"]
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_gtl72"]
 [ext_resource type="Texture2D" uid="uid://dfmuobn2l6wtd" path="res://Art/Tiles/decor.png" id="4_oqdrw"]
@@ -13,6 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="8_32ruj"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="8_sktyp"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="12_ak50s"]
+[ext_resource type="Script" path="res://Scripts/UI/UIControls.gd" id="12_bl0kf"]
+[ext_resource type="Texture2D" uid="uid://mwvmfhsya0t6" path="res://Art/UI/Menu/leveldisplay.png" id="13_t3hxj"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.gd" id="14_2jay5"]
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="15_u5non"]
+[ext_resource type="Texture2D" uid="uid://bpp7bih08pp6l" path="res://Art/UI/Menu/smallButton/square-button.png" id="16_5345w"]
+[ext_resource type="Texture2D" uid="uid://cfkrripy500v" path="res://Art/UI/Menu/smallButton/square-button-hover.png" id="17_itjg6"]
+[ext_resource type="Texture2D" uid="uid://dtpnmjlm1jcxc" path="res://Art/UI/Menu/smallButton/square-button-active.png" id="18_an74n"]
+[ext_resource type="Texture2D" uid="uid://bpbnet1dkfolj" path="res://Art/UI/Menu/restart.png" id="19_40yj6"]
+[ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="20_g30fj"]
+[ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="21_76p1c"]
+[ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="22_7jgg6"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -223,6 +235,15 @@ sources/5 = SubResource("TileSetAtlasSource_kss5e")
 sources/6 = SubResource("TileSetAtlasSource_2x3y3")
 sources/7 = SubResource("TileSetAtlasSource_b4s5e")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhfmp"]
+texture = ExtResource("16_5345w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ry40w"]
+texture = ExtResource("17_itjg6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j4svy"]
+texture = ExtResource("18_an74n")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_6xljf"]
 atlas = ExtResource("5_55e6i")
 region = Rect2(16, 0, 16, 16)
@@ -239,8 +260,11 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("5_55e6i")
 region = Rect2(0, 0, 16, 16)
 
-[node name="Root2" type="Node2D"]
+[node name="Level 2" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_u5pec")
 
 [node name="Border" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3hh4y")
@@ -268,6 +292,77 @@ offset_left = 401.0
 offset_top = 78.0
 offset_right = 401.0
 offset_bottom = 78.0
+
+[node name="UIControls" type="Node2D" parent="."]
+script = ExtResource("12_bl0kf")
+
+[node name="Top Left Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="LevelDisplay" type="Sprite2D" parent="UIControls/Top Left Stuff"]
+position = Vector2(-3, -3)
+texture = ExtResource("13_t3hxj")
+script = ExtResource("14_2jay5")
+
+[node name="Label" type="Label" parent="UIControls/Top Left Stuff/LevelDisplay"]
+offset_left = -19.0
+offset_top = -9.0
+offset_right = 21.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("15_u5non")
+theme_override_font_sizes/font_size = 8
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="UIControls/Top Left Stuff"]
+offset_left = 28.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhfmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ry40w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j4svy")
+icon = ExtResource("19_40yj6")
+icon_alignment = 1
+
+[node name="Top Right Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="ExitButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 430.0
+offset_top = -16.0
+offset_right = 454.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhfmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ry40w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j4svy")
+icon = ExtResource("20_g30fj")
+icon_alignment = 1
+
+[node name="PauseButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 402.0
+offset_top = -16.0
+offset_right = 426.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhfmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ry40w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j4svy")
+icon = ExtResource("21_76p1c")
+icon_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 374.0
+offset_top = -16.0
+offset_right = 398.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uhfmp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ry40w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j4svy")
+icon = ExtResource("22_7jgg6")
+icon_alignment = 1
 
 [node name="ScorableTiles - Positive" type="Node2D" parent="."]
 
@@ -421,3 +516,8 @@ offset_bottom = 96.0
 position = Vector2(104, 8)
 reqSize = 2
 levelPathToLoad = "res://Levels/Level 3.tscn"
+
+[connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/PauseButton" to="UIControls" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/SettingsButton" to="UIControls" method="_on_settings_button_pressed"]

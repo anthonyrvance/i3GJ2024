@@ -1,5 +1,6 @@
-[gd_scene load_steps=45 format=3 uid="uid://bntsqehcefvns"]
+[gd_scene load_steps=60 format=3 uid="uid://bntsqehcefvns"]
 
+[ext_resource type="Texture2D" uid="uid://cig68x8qo2ma5" path="res://Art/UI/Background/PATTERN-nick.png" id="1_ql816"]
 [ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="1_sig8t"]
 [ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="2_mrkdh"]
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="2_yftok"]
@@ -15,7 +16,18 @@
 [ext_resource type="Texture2D" uid="uid://dtvbht7bydpg1" path="res://Art/Animations/fire_animation.png" id="12_im3ab"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="12_tvppf"]
 [ext_resource type="PackedScene" uid="uid://tjkjcec6nw2o" path="res://Prefabs/Tiles/HoleTile.tscn" id="13_fdle2"]
+[ext_resource type="Script" path="res://Scripts/UI/UIControls.gd" id="13_qpyrg"]
+[ext_resource type="Texture2D" uid="uid://mwvmfhsya0t6" path="res://Art/UI/Menu/leveldisplay.png" id="14_1cqyl"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="14_phqny"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.gd" id="15_h1r26"]
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="16_knimf"]
+[ext_resource type="Texture2D" uid="uid://bpp7bih08pp6l" path="res://Art/UI/Menu/smallButton/square-button.png" id="17_lkhw1"]
+[ext_resource type="Texture2D" uid="uid://cfkrripy500v" path="res://Art/UI/Menu/smallButton/square-button-hover.png" id="18_twxxn"]
+[ext_resource type="Texture2D" uid="uid://dtpnmjlm1jcxc" path="res://Art/UI/Menu/smallButton/square-button-active.png" id="19_cnewc"]
+[ext_resource type="Texture2D" uid="uid://bpbnet1dkfolj" path="res://Art/UI/Menu/restart.png" id="20_6pgh5"]
+[ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="21_kpgx7"]
+[ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="22_2ycbv"]
+[ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="23_2mmms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_am2cm"]
 texture = ExtResource("3_2f2wu")
@@ -395,6 +407,15 @@ region = Rect2(16, 0, 16, 16)
 atlas = ExtResource("2_mrkdh")
 region = Rect2(0, 16, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dwrm4"]
+texture = ExtResource("17_lkhw1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dd7m"]
+texture = ExtResource("18_twxxn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sgwsc"]
+texture = ExtResource("19_cnewc")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_3r7ck"]
 atlas = ExtResource("12_im3ab")
 region = Rect2(48, 0, 16, 16)
@@ -433,6 +454,10 @@ animations = [{
 }]
 
 [node name="Level 5" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 48)
+texture = ExtResource("1_ql816")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 48)
@@ -628,6 +653,78 @@ position = Vector2(40, 8)
 rotation = 3.14159
 exportFillingSprite = SubResource("AtlasTexture_sarue")
 
+[node name="UIControls" type="Node2D" parent="."]
+position = Vector2(0, 49)
+script = ExtResource("13_qpyrg")
+
+[node name="Top Left Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="LevelDisplay" type="Sprite2D" parent="UIControls/Top Left Stuff"]
+position = Vector2(-3, -3)
+texture = ExtResource("14_1cqyl")
+script = ExtResource("15_h1r26")
+
+[node name="Label" type="Label" parent="UIControls/Top Left Stuff/LevelDisplay"]
+offset_left = -19.0
+offset_top = -9.0
+offset_right = 21.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("16_knimf")
+theme_override_font_sizes/font_size = 8
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="UIControls/Top Left Stuff"]
+offset_left = 28.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dwrm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4dd7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgwsc")
+icon = ExtResource("20_6pgh5")
+icon_alignment = 1
+
+[node name="Top Right Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="ExitButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 430.0
+offset_top = -16.0
+offset_right = 454.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dwrm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4dd7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgwsc")
+icon = ExtResource("21_kpgx7")
+icon_alignment = 1
+
+[node name="PauseButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 402.0
+offset_top = -16.0
+offset_right = 426.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dwrm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4dd7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgwsc")
+icon = ExtResource("22_2ycbv")
+icon_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 374.0
+offset_top = -16.0
+offset_right = 398.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_dwrm4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_4dd7m")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sgwsc")
+icon = ExtResource("23_2mmms")
+icon_alignment = 1
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(8, -9)
 sprite_frames = SubResource("SpriteFrames_6m1d6")
@@ -658,3 +755,8 @@ offset_bottom = 142.0
 position = Vector2(104, -24)
 reqSize = 6
 levelPathToLoad = "res://Levels/Level 6.tscn"
+
+[connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/PauseButton" to="UIControls" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/SettingsButton" to="UIControls" method="_on_settings_button_pressed"]
