@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="16_ck62m"]
 [ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="17_uduio"]
 [ext_resource type="Texture2D" uid="uid://bpbnet1dkfolj" path="res://Art/UI/Menu/restart.png" id="21_vxhrx"]
-[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="24_4wrcb"]
+[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="24_4wrcb"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -647,11 +647,6 @@ score = -3
 offset_top = 100.0
 offset_bottom = 100.0
 
-[node name="Gate" parent="." instance=ExtResource("6_hn8ik")]
-position = Vector2(24, -24)
-reqSize = 5
-levelPathToLoad = "res://Levels/Level 4.tscn"
-
 [node name="Fire" parent="." instance=ExtResource("24_4wrcb")]
 position = Vector2(-95, -32)
 
@@ -672,6 +667,11 @@ position = Vector2(16, 16)
 
 [node name="Fire4" parent="." instance=ExtResource("24_4wrcb")]
 position = Vector2(-64, 48)
+
+[node name="Gate" parent="." instance=ExtResource("6_hn8ik")]
+position = Vector2(24, -24)
+reqSize = 6
+levelPathToLoad = "res://Levels/Level 4.tscn"
 
 [connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]

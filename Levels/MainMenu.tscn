@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_eq7nq"]
 [ext_resource type="Texture2D" uid="uid://cd4jhiu7riw1p" path="res://Art/UI/Menu/start_screen-background.png" id="2_vuujb"]
 [ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="4_6m4e6"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
+[ext_resource type="PackedScene" uid="uid://r2wbmt3v5nvl" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_eq7nq")

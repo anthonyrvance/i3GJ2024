@@ -585,6 +585,7 @@ reqSize = 12
 [node name="Gate" parent="." instance=ExtResource("14_i1moq")]
 position = Vector2(120, -24)
 reqSize = 4
+levelPathToLoad = "res://Levels/MainMenu.tscn"
 
 [node name="Falling Snow" parent="." instance=ExtResource("16_0c74n")]
 position = Vector2(0, -127)
