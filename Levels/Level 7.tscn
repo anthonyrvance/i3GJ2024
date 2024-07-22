@@ -1,0 +1,416 @@
+[gd_scene load_steps=29 format=3 uid="uid://yfxxdaoprr7j"]
+
+[ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="1_v5fsn"]
+[ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="2_lkuoa"]
+[ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_t6td8"]
+[ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="4_rcl5c"]
+[ext_resource type="Texture2D" uid="uid://dfmuobn2l6wtd" path="res://Art/Tiles/decor.png" id="5_51iqu"]
+[ext_resource type="Texture2D" uid="uid://c7iuq1aqu6igb" path="res://Art/Tiles/startNfinish.png" id="6_ab0mr"]
+[ext_resource type="Texture2D" uid="uid://dvt3u3li4bi77" path="res://Art/Tiles/signs.png" id="7_myw7v"]
+[ext_resource type="PackedScene" uid="uid://btkanmss3nsbk" path="res://Prefabs/Player.tscn" id="7_w0i3o"]
+[ext_resource type="Texture2D" uid="uid://cfr3wx77nglpe" path="res://Art/Tiles/holes.png" id="8_3nvww"]
+[ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="8_qpaeq"]
+[ext_resource type="Texture2D" uid="uid://btgj5cnh4rvex" path="res://Art/Tiles/forest.png" id="9_5c78r"]
+[ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="10_v3s2y"]
+[ext_resource type="PackedScene" uid="uid://tjkjcec6nw2o" path="res://Prefabs/Tiles/HoleTile.tscn" id="13_b2psd"]
+[ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="14_i1moq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sio6d"]
+texture = ExtResource("2_lkuoa")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j386l"]
+sources/0 = SubResource("TileSetAtlasSource_sio6d")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vv5s8"]
+texture = ExtResource("3_t6td8")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ct4g"]
+texture = ExtResource("4_rcl5c")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cfaik"]
+texture = ExtResource("5_51iqu")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmomx"]
+texture = ExtResource("6_ab0mr")
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_rwxwb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vv5s8")
+sources/1 = SubResource("TileSetAtlasSource_3ct4g")
+sources/2 = SubResource("TileSetAtlasSource_cfaik")
+sources/3 = SubResource("TileSetAtlasSource_lmomx")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yjbxw"]
+texture = ExtResource("7_myw7v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmxci"]
+texture = ExtResource("8_3nvww")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_anwio"]
+texture = ExtResource("9_5c78r")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5hw8f"]
+texture = ExtResource("5_51iqu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fq75l"]
+texture = ExtResource("10_v3s2y")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qtc41"]
+sources/0 = SubResource("TileSetAtlasSource_yjbxw")
+sources/1 = SubResource("TileSetAtlasSource_qmxci")
+sources/2 = SubResource("TileSetAtlasSource_anwio")
+sources/3 = SubResource("TileSetAtlasSource_5hw8f")
+sources/4 = SubResource("TileSetAtlasSource_fq75l")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nudw"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(0, 0, 16, 16)
+
+[node name="Level 7" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.25, 2.25)
+
+[node name="SnowballSizeUI" parent="." instance=ExtResource("1_v5fsn")]
+offset_top = 96.0
+offset_bottom = 96.0
+
+[node name="Border" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_j386l")
+format = 2
+layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 65536, 0, -524302, 65536, 0, -524301, 65536, 0, -524300, 65536, 0, -524299, 65536, 0, -524298, 65536, 0, -524297, 65536, 0, -524296, 65536, 0, -524295, 65536, 0, -524294, 65536, 0, -524293, 65536, 0, -524292, 65536, 0, -524291, 65536, 0, -524290, 65536, 0, -524289, 65536, 0, -589824, 65536, 0, -589823, 65536, 0, -589822, 65536, 0, -589821, 65536, 0, -589820, 65536, 0, -589819, 65536, 0, -589818, 65536, 0, -589817, 65536, 0, -589816, 65536, 0, -589815, 65536, 0, -589814, 65536, 0, -589813, 65536, 0, -589812, 65536, 0, -589811, 65536, 0, -589810, 65536, 0, -589809, 131072, 0, 589808, 0, 2, 589809, 65536, 2, 589810, 65536, 2, 589811, 65536, 2, 589812, 65536, 2, 589813, 65536, 2, 589814, 65536, 2, 589815, 65536, 2, 589816, 65536, 2, 589817, 65536, 2, 589818, 65536, 2, 589819, 65536, 2, 589820, 65536, 2, 589821, 65536, 2, 589822, 65536, 2, 589823, 65536, 2, 524288, 65536, 2, 524289, 65536, 2, 524290, 65536, 2, 524291, 65536, 2, 524292, 65536, 2, 524293, 65536, 2, 524294, 65536, 2, 524295, 65536, 2, 524296, 65536, 2, 524297, 65536, 2, 524298, 65536, 2, 524299, 65536, 2, 524300, 65536, 2, 524301, 65536, 2, 524302, 65536, 2, 524303, 131072, 2, -524273, 131072, 1, -458737, 131072, 1, -393201, 131072, 1, -327665, 131072, 1, -262129, 131072, 1, -196593, 131072, 1, -131057, 131072, 1, -65521, 131072, 1, 15, 131072, 1, 65551, 131072, 1, 131087, 131072, 1, 196623, 131072, 1, 262159, 131072, 1, 327695, 131072, 1, 393231, 131072, 1, 458767, 131072, 1, 262128, 0, 1, 327664, 0, 1, 393200, 0, 1, 458736, 0, 1, 524272, 0, 1, -458768, 0, 1, -393232, 0, 1, -327696, 0, 1, -262160, 0, 1, -196624, 0, 1, -131088, 0, 1, -65552, 0, 1, -16, 0, 1, 65520, 0, 1, 131056, 0, 1, 196592, 0, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_rwxwb")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65550, 3, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -10, 196610, 2, -65546, 0, 0, -65545, 0, 0, -65543, 0, 0, -65542, 1, 0, -11, 196610, 3, -12, 196610, 3, -13, 196610, 3, -14, 196610, 3, -15, 196610, 3, -65551, 196610, 3, -131087, 196610, 3, -131086, 196610, 3, -131085, 196610, 3, -131084, 196610, 3, -131083, 196610, 3, -131082, 196610, 3, -131081, 196610, 3, -131079, 196610, 3, -131078, 196610, 3, -131077, 196610, 3, -5, 196610, 3, -6, 196610, 3, -7, 196610, 3, -8, 196610, 3, -9, 196610, 3, -65544, 0, 0, -131080, 196610, 3, -131065, 65539, 0, -65541, 0, 0, -65540, 0, 1342177281, -65539, 0, 0, -65538, 0, 1342177281, 65534, 65536, 1342177280, 65532, 65536, 805306368, 65533, 0, 0, -4, 0, 1610612736, -2, 0, 1342177280, -65537, 1, 0, -131072, 0, 0, -131071, 0, 1610612737, -196607, 0, 1610612736, -262143, 1, 1610612736, -393215, 65537, 1610612736, -327679, 1, 1610612736, -393211, 65537, 0, -327675, 1, 1342177280, -262139, 0, 1342177280, -196603, 1, 1342177280, -131067, 0, 1610612737, -327676, 196610, 2, -196602, 196610, 2, -393214, 1, 0, -393213, 0, 0, -393212, 1, 0, -131066, 1, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -327678, 196610, 2, -393216, 196610, 2, -458747, 196610, 2)
+
+[node name="Decor" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qtc41")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65542, 65537, 1, -131078, 0, 1, -196601, 0, 0, -65537, 65537, 1, -131073, 65536, 2, -262143, 65537, 1, -262142, 131072, 3)
+
+[node name="Player" parent="." instance=ExtResource("7_w0i3o")]
+position = Vector2(-216, -24)
+
+[node name="Scorable Tiles" type="Node2D" parent="."]
+
+[node name="ScorableTile" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-200, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile2" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-184, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile3" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-168, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile4" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-152, -24)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile5" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-136, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile6" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-120, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile7" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-104, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile8" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-72, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile9" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-56, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile15" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-56, -8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile10" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-40, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile11" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile17" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(8, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile18" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile19" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(40, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile20" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(56, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile21" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, -88)
+score = -2
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile26" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, -72)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile27" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, -40)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile28" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -72)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile30" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -56)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile29" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -40)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile22" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(40, -88)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile23" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(56, -88)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile24" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(72, -88)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile25" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -88)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile31" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(72, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile32" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile33" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(104, -24)
+score = -3
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile16" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, -8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile12" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-56, 8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile13" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-40, 8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile14" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, 8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="HoleTile" parent="." instance=ExtResource("13_b2psd")]
+position = Vector2(-88, -24)
+
+[node name="HoleTile2" parent="." instance=ExtResource("13_b2psd")]
+position = Vector2(-8, -24)
+
+[node name="HoleTile3" parent="." instance=ExtResource("13_b2psd")]
+position = Vector2(24, -56)
+
+[node name="Gate" parent="." instance=ExtResource("14_i1moq")]
+position = Vector2(120, -24)
+reqSize = 4
