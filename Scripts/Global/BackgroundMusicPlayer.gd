@@ -1,6 +1,7 @@
 extends AudioStreamPlayer2D
 
 const level_music = preload("res://Sound/snow-132947.mp3")
+const button_jingle = preload("res://Sound/Jingle Bells Single Hit Lower.mp3")
 
 var effectsVolume = 0
 
