@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cfr3wx77nglpe" path="res://Art/Tiles/holes.png" id="7_p7bnf"]
 [ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="7_u0nmm"]
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="9_llk1t"]
-[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="10_ro3yu"]
+[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="10_ro3yu"]
 [ext_resource type="Script" path="res://Scripts/UI/UIControls.gd" id="11_f56xu"]
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="12_26tob"]
 [ext_resource type="Texture2D" uid="uid://mwvmfhsya0t6" path="res://Art/UI/Menu/leveldisplay.png" id="12_v5614"]
