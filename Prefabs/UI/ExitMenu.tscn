@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg06da4itlt6b"]
+
+[ext_resource type="Script" path="res://Scripts/UI/ExitMenu.gd" id="1_fqlaa"]
+[ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="3_m1wva"]
+[ext_resource type="Texture2D" uid="uid://dye05uvh7cqgy" path="res://Art/UI/Menu/quit-bg-new.png" id="4_5jpw6"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqlaa")
+
+[node name="ExitBackground" type="Sprite2D" parent="."]
+texture = ExtResource("4_5jpw6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitBackground"]
+offset_left = -64.0
+offset_top = 31.0
+offset_right = 222.0
+offset_bottom = 79.0
+scale = Vector2(0.446945, 0.446945)
+theme_override_constants/separation = 50
+
+[node name="QuitButton" parent="ExitBackground/HBoxContainer" instance=ExtResource("3_m1wva")]
+layout_mode = 2
+text = "QUIT"
+
+[node name="ResumeButton" parent="ExitBackground/HBoxContainer" instance=ExtResource("3_m1wva")]
+layout_mode = 2
+text = "RESUME"
+
+[connection signal="pressed" from="ExitBackground/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="ExitBackground/HBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]

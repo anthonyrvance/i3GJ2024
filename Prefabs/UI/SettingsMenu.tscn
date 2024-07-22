@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=3 uid="uid://birfjvl8e5imb"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.gd" id="1_c7gb5"]
+[ext_resource type="Texture2D" uid="uid://bpaxn2qxgjlim" path="res://Art/UI/Menu/settings/frozen-background.png" id="2_1yd0b"]
+[ext_resource type="Texture2D" uid="uid://b5k5ohudwsbi2" path="res://Art/UI/Menu/settings/settings-window.png" id="3_6op0x"]
+[ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="3_s52g1"]
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="5_d20th"]
+[ext_resource type="Texture2D" uid="uid://c45lsl3pdhqy2" path="res://Art/UI/Menu/settings/settings-slider_knob.png" id="6_iy4ip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7e0j"]
+atlas = ExtResource("6_iy4ip")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0pg4"]
+atlas = ExtResource("6_iy4ip")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1e36"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c7gb5")
+
+[node name="ExitBackground" type="Sprite2D" parent="."]
+texture = ExtResource("2_1yd0b")
+
+[node name="Settings-window" type="Sprite2D" parent="ExitBackground"]
+position = Vector2(0, -12)
+texture = ExtResource("3_6op0x")
+
+[node name="ResumeButton" parent="ExitBackground" instance=ExtResource("3_s52g1")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -30.0
+offset_top = 50.0
+offset_right = 88.0
+offset_bottom = 98.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.495596, 0.495596)
+text = "RESUME"
+
+[node name="Label" type="Label" parent="ExitBackground"]
+offset_left = -39.0
+offset_top = -57.0
+offset_right = 39.0
+offset_bottom = -34.0
+theme_override_fonts/font = ExtResource("5_d20th")
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ExitBackground"]
+offset_left = -46.0
+offset_top = -39.0
+offset_right = 48.0
+offset_bottom = -16.0
+theme_override_fonts/font = ExtResource("5_d20th")
+theme_override_font_sizes/font_size = 10
+text = "Sound Effects"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="ExitBackground"]
+offset_left = -46.0
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 13.0
+theme_override_fonts/font = ExtResource("5_d20th")
+theme_override_font_sizes/font_size = 10
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EffectsSlider" type="HSlider" parent="ExitBackground"]
+offset_left = -18.0
+offset_top = -21.0
+offset_right = 38.775
+offset_bottom = -5.0
+theme_override_icons/grabber = SubResource("AtlasTexture_w7e0j")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_q0pg4")
+theme_override_styles/slider = SubResource("StyleBoxTexture_c1e36")
+max_value = 1.0
+step = 0.001
+
+[node name="MusicSlider" type="HSlider" parent="ExitBackground"]
+offset_left = -18.0
+offset_top = 8.0
+offset_right = 38.775
+offset_bottom = 24.0
+theme_override_icons/grabber = SubResource("AtlasTexture_w7e0j")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_q0pg4")
+theme_override_styles/slider = SubResource("StyleBoxTexture_c1e36")
+max_value = 1.0
+step = 0.001
+
+[connection signal="pressed" from="ExitBackground/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="value_changed" from="ExitBackground/EffectsSlider" to="." method="_on_effects_slider_value_changed"]
+[connection signal="value_changed" from="ExitBackground/MusicSlider" to="." method="_on_music_slider_value_changed"]

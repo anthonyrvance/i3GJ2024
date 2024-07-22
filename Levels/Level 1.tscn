@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8edqnujkb6fm"]
+[gd_scene load_steps=43 format=3 uid="uid://b8edqnujkb6fm"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_8xge3"]
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="2_tngrp"]
@@ -9,9 +9,19 @@
 [ext_resource type="PackedScene" uid="uid://ckcnevvqf7sah" path="res://Prefabs/Tiles/ScorableTile.tscn" id="5_lxogj"]
 [ext_resource type="Texture2D" uid="uid://olnb3gy4vjue" path="res://Art/Tiles/dirt_tiles.png" id="6_cd20j"]
 [ext_resource type="PackedScene" uid="uid://t78ls4qeu3ak" path="res://Prefabs/Tiles/Gate.tscn" id="6_lh8h5"]
-[ext_resource type="PackedScene" uid="uid://cgkeayh6h46g3" path="res://Prefabs/UI/Exit.tscn" id="7_grwif"]
 [ext_resource type="Texture2D" uid="uid://d3shic8pwfvwd" path="res://Art/Tiles/path_empty.png" id="9_5dlnv"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="11_pej1e"]
+[ext_resource type="Script" path="res://Scripts/UI/UIControls.gd" id="13_cl2jw"]
+[ext_resource type="Texture2D" uid="uid://mwvmfhsya0t6" path="res://Art/UI/Menu/leveldisplay.png" id="14_iffrs"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.gd" id="15_bkjhs"]
+[ext_resource type="FontFile" uid="uid://haqm21t8axo3" path="res://Art/DejaVuSansMono-Bold.ttf" id="16_8oel5"]
+[ext_resource type="Texture2D" uid="uid://bpp7bih08pp6l" path="res://Art/UI/Menu/smallButton/square-button.png" id="17_jpnqi"]
+[ext_resource type="Texture2D" uid="uid://cfkrripy500v" path="res://Art/UI/Menu/smallButton/square-button-hover.png" id="18_mj84e"]
+[ext_resource type="Texture2D" uid="uid://dtpnmjlm1jcxc" path="res://Art/UI/Menu/smallButton/square-button-active.png" id="19_errwt"]
+[ext_resource type="Texture2D" uid="uid://bpbnet1dkfolj" path="res://Art/UI/Menu/restart.png" id="20_876ug"]
+[ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="21_851u5"]
+[ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="22_38yw4"]
+[ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="23_xfmse"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -247,6 +257,15 @@ region = Rect2(0, 16, 16, 16)
 atlas = ExtResource("9_5dlnv")
 region = Rect2(16, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xve3x"]
+texture = ExtResource("17_jpnqi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcoa0"]
+texture = ExtResource("18_mj84e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ro800"]
+texture = ExtResource("19_errwt")
+
 [node name="Root" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
 
@@ -267,12 +286,6 @@ layer_0/tile_data = PackedInt32Array(-196608, 196611, 2, -262144, 196611, 1, -26
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.25, 2.25)
-
-[node name="Exit" parent="." instance=ExtResource("7_grwif")]
-offset_left = 401.0
-offset_top = 78.0
-offset_right = 401.0
-offset_bottom = 78.0
 
 [node name="ScorableTiles - Positive" type="Node2D" parent="."]
 
@@ -393,3 +406,79 @@ offset_bottom = 94.0
 position = Vector2(104, -56)
 reqSize = 5
 levelPathToLoad = "res://Levels/Level 2.tscn"
+
+[node name="UIControls" type="Node2D" parent="."]
+script = ExtResource("13_cl2jw")
+
+[node name="Top Left Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="LevelDisplay" type="Sprite2D" parent="UIControls/Top Left Stuff"]
+position = Vector2(-3, -3)
+texture = ExtResource("14_iffrs")
+script = ExtResource("15_bkjhs")
+
+[node name="Label" type="Label" parent="UIControls/Top Left Stuff/LevelDisplay"]
+offset_left = -19.0
+offset_top = -9.0
+offset_right = 21.0
+offset_bottom = 9.0
+theme_override_fonts/font = ExtResource("16_8oel5")
+theme_override_font_sizes/font_size = 8
+text = "placeholder"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
+
+[node name="RestartButton" type="Button" parent="UIControls/Top Left Stuff"]
+offset_left = 28.0
+offset_top = -16.0
+offset_right = 52.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xve3x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kcoa0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ro800")
+icon = ExtResource("20_876ug")
+icon_alignment = 1
+
+[node name="Top Right Stuff" type="Node2D" parent="UIControls"]
+position = Vector2(-214, -112)
+
+[node name="ExitButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 430.0
+offset_top = -16.0
+offset_right = 454.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xve3x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kcoa0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ro800")
+icon = ExtResource("21_851u5")
+icon_alignment = 1
+
+[node name="PauseButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 402.0
+offset_top = -16.0
+offset_right = 426.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xve3x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kcoa0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ro800")
+icon = ExtResource("22_38yw4")
+icon_alignment = 1
+
+[node name="SettingsButton" type="Button" parent="UIControls/Top Right Stuff"]
+offset_left = 374.0
+offset_top = -16.0
+offset_right = 398.0
+offset_bottom = 8.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_xve3x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kcoa0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ro800")
+icon = ExtResource("23_xfmse")
+icon_alignment = 1
+
+[connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/PauseButton" to="UIControls" method="_on_pause_button_pressed"]
+[connection signal="pressed" from="UIControls/Top Right Stuff/SettingsButton" to="UIControls" method="_on_settings_button_pressed"]

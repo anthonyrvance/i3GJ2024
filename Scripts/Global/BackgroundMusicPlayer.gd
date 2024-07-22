@@ -2,12 +2,15 @@ extends AudioStreamPlayer2D
 
 const level_music = preload("res://Sound/snow-132947.mp3")
 
+var effectsVolume = 0
+
 func _play_music(music: AudioStream, volume = 0.0):
 	if stream == music:
 		return
 		
 	stream = music
 	volume_db = volume_db
+	bus = "Music"
 	play()
 	
 func play_music_level():
@@ -17,8 +20,9 @@ func play_fx(stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()
 	fx_player.stream = stream
 	fx_player.name = "FX_PLAYER"
-	fx_player.volume_db = volume
+	fx_player.volume_db = effectsVolume
 	fx_player.pitch_scale = randf_range(.8, 1.0)
+	fx_player.bus = "Effects"
 	
 	add_child(fx_player)
 	fx_player.play()

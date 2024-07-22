@@ -1,26 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://c154igygrp5ab"]
+[gd_scene load_steps=5 format=3 uid="uid://c154igygrp5ab"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.gd" id="1_eq7nq"]
 [ext_resource type="Texture2D" uid="uid://cd4jhiu7riw1p" path="res://Art/UI/Menu/start_screen-background.png" id="2_vuujb"]
 [ext_resource type="PackedScene" uid="uid://b5isiaiop758n" path="res://Prefabs/UI/MainButton.tscn" id="4_6m4e6"]
-[ext_resource type="PackedScene" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
-[ext_resource type="PackedScene" uid="uid://b11tulya8nmav" path="res://Prefabs/UI/VolumeSlider.tscn" id="5_11h5h"]
+[ext_resource type="PackedScene" uid="uid://r2wbmt3v5nvl" path="res://Prefabs/UI/FallingSnowMenu.tscn" id="4_dy8iw"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_eq7nq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.25, 2.25)
 
 [node name="Menu" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
+scale = Vector2(0.9, 0.9)
 texture = ExtResource("2_vuujb")
-
-[node name="VolumeSlider" parent="." instance=ExtResource("5_11h5h")]
-offset_left = -541.0
-offset_top = -314.0
-offset_right = -541.0
-offset_bottom = -314.0
-scale = Vector2(2.99718, 1.44171)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -28,13 +21,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -59.0
-offset_top = 61.0
-offset_right = 91.0
-offset_bottom = 235.0
+offset_left = -27.0
+offset_top = 32.0
+offset_right = 123.0
+offset_bottom = 206.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.768914, 1)
+scale = Vector2(0.361491, 0.470132)
 theme_override_constants/separation = 15
 
 [node name="StartButton" parent="VBoxContainer" instance=ExtResource("4_6m4e6")]
