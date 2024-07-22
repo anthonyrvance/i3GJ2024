@@ -1,5 +1,6 @@
-[gd_scene load_steps=43 format=3 uid="uid://bdf5g2d2g8en1"]
+[gd_scene load_steps=55 format=3 uid="uid://bdf5g2d2g8en1"]
 
+[ext_resource type="Texture2D" uid="uid://d3b4158ekgkaj" path="res://Art/PATTERN-brooklee.png" id="1_k6xob"]
 [ext_resource type="PackedScene" uid="uid://6vyn2y538dd8" path="res://Prefabs/UI/SnowballSizeUI.tscn" id="1_v5fsn"]
 [ext_resource type="Texture2D" uid="uid://vqtu1htnlp2s" path="res://Art/Tiles/frame_tiles.png" id="2_lkuoa"]
 [ext_resource type="Texture2D" uid="uid://cpybmvodc12qs" path="res://Art/Tiles/path_full.png" id="3_t6td8"]
@@ -25,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="23_qs48k"]
 [ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="24_mx3kf"]
 [ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="25_nl2h7"]
+[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="27_t3rbs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sio6d"]
 texture = ExtResource("2_lkuoa")
@@ -219,6 +221,46 @@ sources/4 = SubResource("TileSetAtlasSource_fq75l")
 atlas = ExtResource("4_rcl5c")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpqba"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kova0"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 1, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h40i"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj1ep"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1nyo"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yhxf"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jd1j1"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbp1d"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yamik"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gd2r"]
+atlas = ExtResource("4_rcl5c")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eel23"]
 texture = ExtResource("19_pwkx5")
 
@@ -233,6 +275,10 @@ texture = ExtResource("21_wa3lw")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.25, 2.25)
 
+[node name="Pattern-brooklee" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_k6xob")
+
 [node name="SnowballSizeUI" parent="." instance=ExtResource("1_v5fsn")]
 offset_top = 96.0
 offset_bottom = 96.0
@@ -245,37 +291,21 @@ layer_0/tile_data = PackedInt32Array(-524304, 0, 0, -524303, 65536, 0, -524302, 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_rwxwb")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65550, 3, 0, -65549, 0, 0, -65548, 0, 0, -65547, 0, 0, -10, 196610, 2, -65546, 0, 0, -65545, 0, 0, -65543, 0, 0, -65542, 1, 0, -11, 196610, 3, -12, 196610, 3, -13, 196610, 3, -14, 196610, 3, -15, 196610, 3, -65551, 196610, 3, -131087, 196610, 3, -131086, 196610, 3, -131085, 196610, 3, -131084, 196610, 3, -131083, 196610, 3, -131082, 196610, 3, -131081, 196610, 3, -131079, 196610, 3, -131078, 196610, 3, -131077, 196610, 3, -5, 196610, 3, -6, 196610, 3, -7, 196610, 3, -8, 196610, 3, -9, 196610, 3, -65544, 0, 0, -131080, 196610, 3, -131065, 65539, 0, -65541, 0, 0, -65540, 0, 1342177281, -65539, 0, 1610612737, -65538, 0, 1342177281, 65534, 65536, 1342177280, 65532, 65536, 805306368, 65533, 0, 0, -4, 0, 1610612736, -2, 0, 1342177280, -65537, 1, 0, -131072, 0, 0, -131071, 65536, 1, -196607, 0, 805306369, -262143, 1, 1610612736, -393215, 65537, 1610612736, -327679, 1, 1610612736, -393211, 65537, 0, -327675, 1, 1342177280, -262139, 0, 1342177280, -196603, 1, 1342177280, -131067, 65536, 1, -327676, 196610, 2, -196602, 196610, 2, -393214, 1, 0, -393213, 0, 0, -393212, 1, 0, -131066, 1, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -327678, 196610, 2, -393216, 196610, 2, -458747, 196610, 2, -262147, 65536, 1610612736, -196611, 0, 1342177280, -131075, 0, 1342177280, -262146, 0, 0, -262145, 65536, 0, -196608, 65536, 805306368, -262144, 65536, 0, -196609, 65536, 805306368, -65535, 1, 1342177280, 1, 65537, 805306368, 65538, 65537, 805306368, 65539, 1, 0, 65540, 1, 0, 65541, 65536, 1342177280, 5, 65536, 1610612736, 6, 65536, 1342177280, -65530, 65536, 0, 131074, 196610, 2, 131075, 196610, 2, 131076, 196610, 2, 0, 196610, 2, -65531, 65536, 805306368, 2, 65536, 0)
+layer_0/tile_data = PackedInt32Array(-65548, 196610, 3, -65547, 196610, 3, -10, 0, 1610612736, -65546, 65537, 1610612736, -65545, 0, 0, -65543, 0, 0, -65542, 1, 0, -11, 196610, 3, -12, 196610, 3, -131084, 196610, 3, -131083, 196610, 3, -131081, 196610, 3, -131079, 196610, 3, -131078, 196610, 3, -131077, 196610, 3, -5, 196610, 3, -6, 196610, 3, -7, 196610, 3, -8, 196610, 3, -9, 196610, 3, -65544, 0, 0, -131080, 196610, 3, -131065, 65539, 0, -65541, 0, 0, -65540, 0, 1342177281, -65539, 0, 1610612737, -65538, 0, 1342177281, 65534, 65536, 1342177280, 65532, 65536, 805306368, 65533, 0, 0, -4, 0, 1610612736, -2, 0, 1342177280, -65537, 1, 0, -131072, 0, 0, -131071, 65536, 1, -196607, 0, 805306369, -262143, 1, 1610612736, -393215, 65537, 1610612736, -327679, 1, 1610612736, -393211, 65537, 0, -327675, 1, 1342177280, -262139, 0, 1342177280, -196603, 1, 1342177280, -131067, 65536, 1, -393214, 1, 0, -393213, 0, 0, -393212, 1, 0, -131066, 1, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -262147, 65537, 1610612736, -196611, 0, 1342177280, -131075, 0, 1342177280, -262146, 0, 0, -262145, 65536, 0, -196608, 65536, 805306368, -262144, 65536, 0, -196609, 65536, 805306368, -65535, 1, 1342177280, 1, 65537, 805306368, 65538, 65537, 805306368, 65539, 1, 0, 65540, 1, 0, 65541, 65536, 1342177280, 5, 65536, 1610612736, 6, 65536, 1342177280, -65530, 65536, 0, -65531, 65536, 805306368, 2, 65536, 0, 196598, 3, 1610612736, 131062, 0, 1610612736, 65526, 0, 1610612736, 65525, 196610, 3, 131061, 196610, 3, 196597, 196610, 3, 262133, 196610, 3, 262134, 196610, 3, 262135, 196610, 3, 196599, 196610, 3, 131063, 196610, 3, 65527, 196610, 3, 65528, 196610, 3, 65531, 196610, 3, 131064, 196610, 3, -3, 196610, 3, -196610, 196610, 3, -131074, 196610, 3, -131073, 196610, 3, -131076, 196610, 3, -196612, 196610, 3, -262148, 196610, 3, -327684, 196610, 3, -327683, 196610, 3, -327682, 196610, 3, -327681, 196610, 3, -393216, 196610, 3, -327680, 196610, 3, -327678, 196610, 3, -327677, 196610, 3, -327676, 196610, 3, -262140, 196610, 3, -196604, 196610, 3, -196605, 196610, 3, -196606, 196610, 3, -262142, 196610, 3, -262141, 196610, 3, -458750, 196610, 3, -458749, 196610, 3, -458748, 196610, 3, -458747, 196610, 3, -458746, 196610, 3, -393210, 196610, 3, -327674, 196610, 3, -262138, 196610, 3, -196602, 196610, 3, -196601, 196610, 3, -196600, 196610, 3, -131064, 196610, 3, -65528, 196610, 3, -65529, 196610, 3, 7, 196610, 3, 65543, 196610, 3, 65544, 196610, 3, 8, 196610, 3, 131079, 196610, 3, 65542, 196610, 3, 131078, 196610, 3, 131077, 196610, 3, 131076, 196610, 3, 131075, 196610, 3, 131074, 196610, 3, 131073, 196610, 3, 65537, 196610, 3, 65535, 196610, 3, 0, 196610, 3, -65536, 196610, 3, -1, 196610, 3, -65534, 196610, 3, -65533, 196610, 3, -65532, 196610, 3, 4, 196610, 3, 3, 196610, 3, 131070, 196610, 3, 131069, 196610, 3, 131068, 196610, 3, 196616, 196610, 3, 131080, 196610, 3, 131081, 196610, 3, 65545, 196610, 3, 9, 196610, 3, -65527, 196610, 3, -65526, 196610, 3, 10, 196610, 3, 65546, 196610, 3, 131082, 196610, 3, 196618, 196610, 3, 196617, 196610, 3, -262136, 196610, 3, -262135, 196610, 3, -262134, 196610, 3, -262133, 196610, 3, -196597, 196610, 3, -196596, 196610, 3, -131060, 196610, 3, -131061, 196610, 3, -65525, 196610, 3, -131062, 196610, 3, -196598, 196610, 3, -196599, 196610, 3, -131063, 196610, 3, 11, 196610, 3, -131082, 196610, 3, -196619, 196610, 3, -196618, 196610, 3, -196617, 196610, 3, -196613, 196610, 3, -262137, 196610, 3, -327673, 196610, 3)
 
 [node name="Decor" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_qtc41")
 format = 2
-layer_0/tile_data = PackedInt32Array(-65542, 65537, 1, -131078, 0, 1, -196601, 0, 1, -65537, 65537, 1, -131073, 65536, 2, -262143, 65537, 1, -262142, 131072, 3, -262147, 1, 0, -327683, 65536, 2, -65535, 65537, 1, -65534, 0, 3)
+layer_0/tile_data = PackedInt32Array(-65542, 65537, 1, -131078, 0, 1, -196601, 0, 1, -65537, 65537, 1, -131073, 65536, 2, -262143, 65537, 1, -262142, 131072, 3, -262147, 1, 0, -327683, 65536, 2, -65535, 65537, 1, -65534, 0, 3, 196614, 65540, 3, 196613, 65540, 3, 196612, 65540, 3, 196611, 65540, 3, 196610, 65540, 3, 196609, 65540, 3, 327671, 65540, 3, 327670, 65540, 3, 327669, 65540, 3, 262152, 65540, 3, 262153, 65540, 3, 262154, 65540, 3, 196615, 65540, 0, 65530, 65540, 0, 65524, 65540, 0, -65524, 4, 0, 65547, 4, 0, 65529, 4, 0, 196600, 4, 0, -262132, 196612, 0, -327672, 196612, 0, -393209, 196612, 0, -458751, 131076, 0, -262149, 131076, 0, -196614, 131076, 0, -196616, 196612, 0, -196620, 131076, 0, -262156, 4, 1, -262150, 4, 1, -393221, 4, 1, -524287, 4, 1, -262152, 131076, 1, -524281, 131076, 1, -393208, 131076, 1, -327668, 131076, 1, -262131, 131076, 1, 65536, 65540, 0, 131071, 4, 0, 196606, 65540, 3, 196605, 65540, 3, 196604, 65540, 3, 196607, 131076, 3, 196608, 4, 3, 327668, 4, 3, 327672, 131076, 3, 196603, 4, 3, 65523, 4, 3, -196621, 4, 1, -131085, 4, 2, -65549, 4, 2, -13, 4, 2, 131060, 4, 2, 196596, 4, 2, 262132, 4, 2, 196601, 131076, 3, 131065, 131076, 2, 131067, 65540, 0, 131066, 4, 3, 262136, 131076, 2, 131072, 4, 2, 262155, 131076, 3, 65548, 131076, 3, -196595, 131076, 2, -131059, 131076, 2, 12, 131076, 2, -65523, 131076, 3, 131083, 131076, 2, 196619, 131076, 2, -327669, 65540, 1, -327670, 65540, 1, -327671, 65540, 1, -524282, 65540, 1, -524283, 65540, 1, -524284, 65540, 1, -524285, 65540, 1, -524286, 65540, 1, -458745, 131076, 2, -458752, 65540, 1, -393217, 65540, 1, -393218, 65540, 1, -393219, 65540, 1, -393220, 65540, 1, -327685, 4, 2, -262153, 65540, 1, -262154, 65540, 1, -262155, 65540, 1, 131069, 65539, 3, 131068, 3, 3, 131070, 131075, 3, 262134, 65539, 3, 262135, 131075, 2, 262133, 65539, 2, 196599, 65539, 1, 131063, 65539, 1, 65527, 65539, 1, -9, 65539, 0, 196597, 3, 1, 131061, 3, 1, 65525, 3, 1, -11, 3, 1, -65547, 3, 0, -8, 65539, 3, -7, 65539, 3, -6, 65539, 3, -5, 131075, 0, 65531, 3, 2, 65528, 196611, 1, 131064, 196611, 1, -12, 196611, 1, -65548, 196611, 1, -131084, 196611, 1, -131083, 196611, 0, -131080, 196611, 1, -131079, 196611, 1, -131076, 131075, 2, -131077, 3, 3, -196612, 3, 1, -262148, 3, 0, -196613, 196611, 1, -327684, 196611, 0, 262151, 4, 3, 8, 65538, 1, 9, 65538, 1, 65545, 65538, 1, 65544, 65538, 1, -65526, 131074, 0, 10, 131074, 1, 65546, 131074, 1, 131082, 131074, 2, 131081, 65538, 2, 131080, 65538, 2, 131079, 2, 2, 65543, 2, 1, 7, 2, 1, -65529, 2, 0, -65528, 65538, 0, -65527, 65538, 0, 196618, 196611, 0, -131060, 196611, 0, -3, 196611, 1, -196604, 196611, 1, -196605, 196611, 1, -262141, 196611, 0, -393210, 3, 0, -327674, 3, 2, -262138, 196611, 0, -196598, 65538, 1, -131063, 2, 2, -131062, 65538, 2, -131061, 131074, 2, -196597, 131074, 1, -262133, 131074, 0, -262134, 65538, 0, -262135, 2, 0, -196599, 2, 1, -131064, 3, 2, -196600, 3, 1, -262136, 131075, 0, -262137, 3, 3)
 
 [node name="Player" parent="." instance=ExtResource("7_w0i3o")]
-position = Vector2(-216, -24)
+position = Vector2(-152, 40)
 
 [node name="Scorable Tiles" type="Node2D" parent="."]
-
-[node name="ScorableTile" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-200, -24)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile2" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-184, -24)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile3" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-168, -24)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile4" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(-152, -24)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile5" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(-136, -24)
@@ -297,25 +327,132 @@ position = Vector2(-72, -24)
 refillable = true
 exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
-[node name="ScorableTile9" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-56, -24)
+[node name="ScorableTile36" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, -72)
 refillable = true
 exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile37" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-8, -72)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_gpqba")
+
+[node name="ScorableTile49" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(8, -56)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_gpqba")
+
+[node name="ScorableTile47" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-8, -56)
+rotation = 3.14159
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_kova0")
+
+[node name="ScorableTile50" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-56, 8)
+rotation = 3.14159
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_kova0")
+
+[node name="ScorableTile48" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(8, -40)
+rotation = 3.14159
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_kova0")
+
+[node name="ScorableTile38" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(104, -8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_gpqba")
+
+[node name="ScorableTile39" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(40, 8)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_gpqba")
+
+[node name="ScorableTile53" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, 8)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_4h40i")
+
+[node name="ScorableTile54" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -8)
+rotation = 3.14159
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_aj1ep")
+
+[node name="ScorableTile9" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-56, -24)
+rotation = 1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_x1nyo")
+
+[node name="ScorableTile12" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, -24)
+rotation = 1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_x1nyo")
+
+[node name="ScorableTile55" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-40, -24)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_0yhxf")
+
+[node name="ScorableTile56" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, -40)
+rotation = 3.14159
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_jd1j1")
 
 [node name="ScorableTile15" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(-56, -8)
+rotation = -1.5708
 refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
 
-[node name="ScorableTile10" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-40, -24)
+[node name="ScorableTile30" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-152, -8)
+rotation = -1.5708
 refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
 
-[node name="ScorableTile11" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-24, -24)
+[node name="ScorableTile45" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-152, 8)
+rotation = -1.5708
 refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
+
+[node name="ScorableTile46" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-152, 24)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
+
+[node name="ScorableTile16" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-40, -40)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
+
+[node name="ScorableTile35" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-40, -56)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
+
+[node name="ScorableTile44" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -56)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
+
+[node name="ScorableTile34" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(-24, -8)
+rotation = -1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_xbp1d")
 
 [node name="ScorableTile17" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(8, -24)
@@ -325,7 +462,12 @@ exportFillingSprite = SubResource("AtlasTexture_4nudw")
 [node name="ScorableTile18" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(24, -24)
 refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+exportFillingSprite = SubResource("AtlasTexture_yamik")
+
+[node name="ScorableTile27" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, -24)
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_yamik")
 
 [node name="ScorableTile19" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(40, -24)
@@ -340,37 +482,38 @@ exportFillingSprite = SubResource("AtlasTexture_4nudw")
 [node name="ScorableTile21" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(24, -88)
 score = -2
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile26" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(24, -72)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile27" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(24, -40)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile28" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(88, -72)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile30" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(88, -56)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile29" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(88, -40)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile22" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(40, -88)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+
+[node name="ScorableTile40" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(56, 24)
+score = -3
+
+[node name="ScorableTile42" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(40, 24)
+score = -3
+
+[node name="ScorableTile43" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(24, 8)
+score = -3
+
+[node name="ScorableTile41" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(72, 24)
+score = -3
 
 [node name="ScorableTile23" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(56, -88)
@@ -380,37 +523,19 @@ exportFillingSprite = SubResource("AtlasTexture_4nudw")
 [node name="ScorableTile24" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(72, -88)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile25" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(88, -88)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile31" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(72, -24)
 refillable = true
 exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
-[node name="ScorableTile32" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(88, -24)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
 [node name="ScorableTile33" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(104, -24)
 score = -3
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile16" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-24, -8)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
-
-[node name="ScorableTile12" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
-position = Vector2(-56, 8)
-refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile13" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(-40, 8)
@@ -419,17 +544,40 @@ exportFillingSprite = SubResource("AtlasTexture_4nudw")
 
 [node name="ScorableTile14" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
 position = Vector2(-24, 8)
+rotation = 1.5708
 refillable = true
-exportFillingSprite = SubResource("AtlasTexture_4nudw")
+exportFillingSprite = SubResource("AtlasTexture_3gd2r")
+
+[node name="ScorableTile51" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(88, 24)
+rotation = 1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_3gd2r")
+
+[node name="ScorableTile52" parent="Scorable Tiles" instance=ExtResource("8_qpaeq")]
+position = Vector2(104, 8)
+rotation = 1.5708
+refillable = true
+exportFillingSprite = SubResource("AtlasTexture_3gd2r")
 
 [node name="HoleTile" parent="." instance=ExtResource("13_b2psd")]
 position = Vector2(-88, -24)
 
 [node name="HoleTile2" parent="." instance=ExtResource("13_b2psd")]
 position = Vector2(-8, -24)
+reqSize = 8
+
+[node name="HoleTile4" parent="." instance=ExtResource("13_b2psd")]
+position = Vector2(24, -8)
+reqSize = 10
+
+[node name="HoleTile5" parent="." instance=ExtResource("13_b2psd")]
+position = Vector2(-40, -72)
+reqSize = 8
 
 [node name="HoleTile3" parent="." instance=ExtResource("13_b2psd")]
 position = Vector2(24, -56)
+reqSize = 12
 
 [node name="Gate" parent="." instance=ExtResource("14_i1moq")]
 position = Vector2(120, -24)
@@ -505,6 +653,36 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_xbyo8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_2w5d5")
 icon = ExtResource("25_nl2h7")
 icon_alignment = 1
+
+[node name="Fire" parent="." instance=ExtResource("27_t3rbs")]
+position = Vector2(-160, -48)
+
+[node name="Fire2" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(160, 48)
+
+[node name="Fire3" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(192, 80)
+
+[node name="Fire4" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(208, 80)
+
+[node name="Fire5" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(224, 80)
+
+[node name="Fire6" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(256, 0)
+
+[node name="Fire7" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(240, -64)
+
+[node name="Fire8" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(224, -32)
+
+[node name="Fire9" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(192, -32)
+
+[node name="Fire10" parent="Fire" instance=ExtResource("27_t3rbs")]
+position = Vector2(160, -48)
 
 [connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]
