@@ -271,10 +271,6 @@ exportFillingSprite = SubResource("AtlasTexture_jfb5w")
 position = Vector2(-40, -88)
 exportFillingSprite = SubResource("AtlasTexture_jfb5w")
 
-[node name="ScorableTile31" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(-24, -88)
-exportFillingSprite = SubResource("AtlasTexture_jfb5w")
-
 [node name="ScorableTile32" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(-8, -88)
 exportFillingSprite = SubResource("AtlasTexture_jfb5w")
@@ -362,6 +358,16 @@ position = Vector2(-40, -24)
 rotation = 1.5708
 exportFillingSprite = SubResource("AtlasTexture_kgsb8")
 
+[node name="ScorableTile46" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
+position = Vector2(-24, -88)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_kgsb8")
+
+[node name="ScorableTile51" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
+position = Vector2(56, -88)
+rotation = 1.5708
+exportFillingSprite = SubResource("AtlasTexture_kgsb8")
+
 [node name="ScorableTile47" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(-8, -24)
 rotation = 1.5708
@@ -369,10 +375,6 @@ exportFillingSprite = SubResource("AtlasTexture_kgsb8")
 
 [node name="ScorableTile48" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
 position = Vector2(8, -24)
-exportFillingSprite = SubResource("AtlasTexture_jfb5w")
-
-[node name="ScorableTile36" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
-position = Vector2(56, -88)
 exportFillingSprite = SubResource("AtlasTexture_jfb5w")
 
 [node name="ScorableTile79" parent="ScorableTiles - Positive" instance=ExtResource("8_1vylh")]
