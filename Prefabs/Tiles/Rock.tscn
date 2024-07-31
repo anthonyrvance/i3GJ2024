@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0txer5wn0ors"]
+
+[ext_resource type="Script" path="res://Scripts/Tiles/test_rock.gd" id="1_od6gq"]
+[ext_resource type="Texture2D" uid="uid://dfmuobn2l6wtd" path="res://Art/Tiles/decor.png" id="2_8ru18"]
+[ext_resource type="Texture2D" uid="uid://dm420757clhwx" path="res://Art/Temporary/snow.png" id="2_ucvwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjmr2"]
+atlas = ExtResource("2_8ru18")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh888"]
+size = Vector2(14, 14)
+
+[node name="Rock" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+disable_mode = 2
+script = ExtResource("1_od6gq")
+exportFillingSprite = SubResource("AtlasTexture_cjmr2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_sh888")
+one_way_collision_margin = 68.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
+texture = ExtResource("2_ucvwo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D/StaticBody2D"]
+shape = SubResource("RectangleShape2D_sh888")
+one_way_collision_margin = 68.2

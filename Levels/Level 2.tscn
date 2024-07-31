@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bclapmlscaui2"]
+[gd_scene load_steps=48 format=3 uid="uid://bclapmlscaui2"]
 
 [ext_resource type="Texture2D" uid="uid://c235lpm2aw6h3" path="res://Art/Temporary/rock.png" id="1_jf6qi"]
 [ext_resource type="Texture2D" uid="uid://bupd6iuhnd8xu" path="res://Art/UI/Background/PATTERN-big_tone.png" id="1_u5pec"]
@@ -25,7 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://bl5a81nvwrmv" path="res://Art/UI/Menu/smallButton/icon-exit.png" id="20_g30fj"]
 [ext_resource type="Texture2D" uid="uid://coc2oldajy5ql" path="res://Art/UI/Menu/smallButton/icon-pause.png" id="21_76p1c"]
 [ext_resource type="Texture2D" uid="uid://36046c6s6win" path="res://Art/UI/Menu/smallButton/icon-settings.png" id="22_7jgg6"]
-[ext_resource type="PackedScene" path="res://Art/fire.tscn" id="26_d6qc3"]
+[ext_resource type="PackedScene" uid="uid://cyroshl6s6xdp" path="res://Art/fire.tscn" id="26_d6qc3"]
+[ext_resource type="Script" path="res://Scripts/Tiles/test_rock.gd" id="27_3l0g8"]
+[ext_resource type="PackedScene" uid="uid://b0txer5wn0ors" path="res://Prefabs/Tiles/Rock.tscn" id="27_8wfuc"]
 
 [sub_resource type="GDScript" id="GDScript_3v5xg"]
 script/source = "extends Node2D
@@ -261,6 +263,13 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("5_55e6i")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhg2e"]
+atlas = ExtResource("4_oqdrw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_44opr"]
+size = Vector2(14, 14)
+
 [node name="Level 2" type="Node2D"]
 script = SubResource("GDScript_3v5xg")
 
@@ -384,19 +393,10 @@ position = Vector2(72, -8)
 rotation = 1.5708
 exportFillingSprite = SubResource("AtlasTexture_xegay")
 
-[node name="ScorableTile38" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-88, -24)
-rotation = 1.5708
-exportFillingSprite = SubResource("AtlasTexture_xegay")
-
 [node name="ScorableTile39" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
 position = Vector2(-88, -8)
 rotation = 1.5708
 exportFillingSprite = SubResource("AtlasTexture_xegay")
-
-[node name="ScorableTile14" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
-position = Vector2(-72, -40)
-exportFillingSprite = SubResource("AtlasTexture_hbg4o")
 
 [node name="ScorableTile15" parent="ScorableTiles - Positive" instance=ExtResource("8_sktyp")]
 position = Vector2(-56, -40)
@@ -523,6 +523,31 @@ position = Vector2(49, -32)
 position = Vector2(104, 8)
 reqSize = 2
 levelPathToLoad = "res://Levels/Level 3.tscn"
+
+[node name="Area2D2" type="Area2D" parent="."]
+disable_mode = 2
+script = ExtResource("27_3l0g8")
+exportFillingSprite = SubResource("AtlasTexture_mhg2e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_44opr")
+one_way_collision_margin = 68.2
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+visible = false
+position = Vector2(72, 40)
+texture = ExtResource("2_4qpvg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area2D2"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2/StaticBody2D"]
+position = Vector2(-88, -24)
+shape = SubResource("RectangleShape2D_44opr")
+one_way_collision_margin = 68.2
+
+[node name="Rock" parent="." instance=ExtResource("27_8wfuc")]
+position = Vector2(-72, -40)
 
 [connection signal="pressed" from="UIControls/Top Left Stuff/RestartButton" to="UIControls" method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UIControls/Top Right Stuff/ExitButton" to="UIControls" method="_on_exit_button_pressed"]

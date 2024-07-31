@@ -4,7 +4,7 @@ extends Area2D
 @export var minScore = 1
 
 func _on_body_entered(body):
-	var player := body as Player
+	var player := body as 
 	if not player:
 		return
 		
