@@ -1,5 +1,6 @@
 extends AudioStreamPlayer2D
 
+const menu_music = preload("res://Sound/main_theme_draft1_loop.wav")
 const level_music = preload("res://Sound/snow-132947.mp3")
 const button_jingle = preload("res://Sound/Jingle Bells Single Hit Lower.mp3")
 
@@ -16,6 +17,9 @@ func _play_music(music: AudioStream, volume = 0.0):
 	
 func play_music_level():
 	_play_music(level_music)
+
+func play_music_menu():
+	_play_music(menu_music)
 
 func play_fx(stream: AudioStream, volume = 0.0):
 	var fx_player = AudioStreamPlayer.new()
